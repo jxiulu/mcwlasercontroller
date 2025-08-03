@@ -124,11 +124,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
+    <ClInclude Include="OsTechProtocols.h" />
+    <ClInclude Include="SerialPortProtocols.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
+    <ClCompile Include="OsTechProtocols.c" />
+    <ClCompile Include="SerialPortProtocols.c" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="mcwlaser.rc" />
