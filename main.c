@@ -23,7 +23,7 @@ static DWORD WINAPI temperaturePollingThread(LPVOID parameter) {
 			printf("Current Temperature: %.2f degrees Celsius\n", currentTemperatureCelsius);
 		}
 		else {
-			fprintf(stderr, "Failed to get temperature\n");
+			fprintf(stderr, "FAILED TO GET TEMPERATURE\n");
 		}
 		sleepMilliseconds(5000);
 	}
@@ -31,7 +31,7 @@ static DWORD WINAPI temperaturePollingThread(LPVOID parameter) {
 }
 
 static void startMenu(void) {
-	printf("\n=== MCW Laser Control (C) ===\n");
+	printf("\nLaser Controller Menu\n");
 	printf("1) Toggle Main Laser (L)\n");
 	printf("2) Toggle Pilot Laser (PL)\n");
 	printf("3) Set Laser Current Target (LCT)\n");
@@ -63,7 +63,7 @@ int main(int argc, char** argv) {
 		NULL, 0, temperaturePollingThread, &connectedDevice, 0, NULL
 	);
 
-	for (;;) {
+	while (true) {
 		startMenu();
 		int selectedOption = 0;
 		if (scanf("%d", &selectedOption) != 1) {
