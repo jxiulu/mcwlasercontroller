@@ -85,7 +85,7 @@ bool formatCommandValue(char* outboundValue, size_t	maximumOutboundBytes, const 
 		snprintf(outboundValue, maximumOutboundBytes, "%.3g", floatValue);
 		return true;
 	}
-	else if (strcmp(valueType, "str" == 0)) { // not used in this program but i'll leave it here
+	else if (strcmp(valueType, "str") == 0) { // not used in this program but i'll leave it here
 		strncpy(outboundValue, "", maximumOutboundBytes);
 		return true;
 	}
@@ -161,14 +161,14 @@ bool readDeviceFloatReply(Device* device, float* outputReply) {
 bool sendCommand(Device* device,
 	const char* commandName,
 	const char* replyType,
-	const char* typeNameForValue,
+	const char* commandType,
 	bool boolValue, int intValue, double floatValue,
 	bool* outBool, uint16_t* outWord, float* outFloat)
 {
 	char commandLine[128] = { 0 };
-	if (typeNameForValue) {
+	if (commandType) {
 		char valueText[32] = { 0 };
-		if (formatCommandValue(valueText, sizeof(valueText), typeNameForValue, boolValue, intValue, floatValue)) {
+		if (formatCommandValue(valueText, sizeof(valueText), commandType, boolValue, intValue, floatValue)) {
 			snprintf(commandLine, sizeof(commandLine), "%s%s", commandName, valueText);
 		}
 	}

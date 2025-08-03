@@ -74,50 +74,36 @@ int main(int argc, char** argv) {
 
 		switch (selectedOption) {
 			case 1: {
-				bool currentDeviceState = false;
-				if (!sendCommand(&connectedDevice, "L", "bool", "bool", false, 0, 0.0, &currentDeviceState, NULL, NULL)) {
+				bool mainLaserStatus = false;
+				if (!sendCommand(&connectedDevice, "L", "bool", "bool", false, 0, 0.0, &mainLaserStatus, NULL, NULL)) {
 					fprintf(stderr, "Failed to toggle main laser\n");
 				}
 				else {
-					printf("Main Laser is now %s\n", currentDeviceState ? "ON" : "OFF");
+					printf("Main Laser is now %s\n", mainLaserStatus ? "ON" : "OFF");
 				}
 				break;
 			}
-			case 2: // Toggle Pilot Laser
-				if (!sendCommand(&connectedDevice, "PL", "bool", "bool", false, 0, 0.0, NULL, NULL, NULL)) {
+			case 2: {// Toggle Pilot Laser 
+				bool pilotLaserStatus = false;
+				if (!sendCommand(&connectedDevice, "PL", "bool", "bool", false, 0, 0.0, pilotLaserStatus, NULL, NULL)) {
 					fprintf(stderr, "Failed to toggle pilot laser\n");
 				}
-				break;
-			case 3: { // Set Laser Current Target
-				int lctValue = 0;
-				printf("Enter LCT value (0-65535): ");
-				scanf("%d", &lctValue);
-				if (!sendCommand(&connectedDevice, "LCT", "bool", "int", false, lctValue, 0.0, NULL, NULL, NULL)) {
-					fprintf(stderr, "Failed to set LCT value\n");
+				else {
+					printf("Pilot Laser is now %s\n", pilotLaserStatus ? "ON" : "OFF");
 				}
 				break;
+			}
+			case 3: { // Set Laser Current Target
+				//
 			}
 			case 4: { // Timed Run
-				int seconds = 0;
-				printf("Enter number of seconds for timed run: ");
-				scanf("%d", &seconds);
-				if (!sendCommand(&connectedDevice, "TR", "bool", "int", false, seconds * 1000, 0.0, NULL, NULL, NULL)) {
-					fprintf(stderr, "Failed to start timed run\n");
-				}
-				break;
+				//
 			}
 			case 5: { // Set Pulse Width
-				int pulseWidth = 0;
-				printf("Enter Pulse Width in microseconds: ");
-				scanf("%d", &pulseWidth);
-				if (!sendCommand(&connectedDevice, "LMW", "bool", "int", false, pulseWidth, 0.0, NULL, NULL, NULL)) {
-					fprintf(stderr, "Failed to set pulse width\n");
-				}
-				break;
+				//
 			}
 			case 6: { // Set Pulse Period
-				int pulsePeriod = 0;
-				printf("Enter Pulse Period in microseconds: ");
+				//
 			}
 		}
 	}
