@@ -1,13 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
 
-#include <windows.h>
-#include <stdio.h>
-#include <stdbool.h>
-#include <stdint.h>
-#include <ctype.h>
-#include <string.h>
-#include <time.h>
-
 #include "SerialPortProtocols.h"
 #include "OstechProtocols.h"
 
@@ -48,7 +40,7 @@ bool handshakeByEcho(Device* device, unsigned int timeOutMilliseconds) {
 		writeBytes(&device->deviceSerialPort, &ESCAPE_CHARACTER, 1);
 		unsigned char returnedByte = 0;
 		int numberOfBytesReturned = readBytes(&device->deviceSerialPort, &returnedByte, 1);
-		if (numberOfBytesReturned == 1 & returnedByte == ESCAPE_CHARACTER) {
+		if (numberOfBytesReturned == 1 && returnedByte == ESCAPE_CHARACTER) {
 			flushInput(&device->deviceSerialPort);
 			return true;
 		}
@@ -76,58 +68,82 @@ bool formatCommandValue(char* outboundValue, size_t	maximumOutboundBytes, const 
 	else if (strcmp(valueType, "float") == 0) {
 		for (int position = 9; position >= 0; --position) {
 			char temp[64];
-			snprintf(temp, sizeof(temp), "%. *g", position, floatValue);
-			if ((int)strlen(temp) <= 9) {
+			snprintf(temp, sizeof(temp), "%.*g", position, floatValue);
+			if ((int)strlen(temp) <= 9) { // keeping it to 9 characters
 				snprintf(outboundValue, maximumOutboundBytes, "%s", temp);
+				return true;
 			}
 		}
 		// Fallback
 		snprintf(outboundValue, maximumOutboundBytes, "%.3g", floatValue);
 		return true;
 	}
-	else if (strcmp(valueType, "str") == 0) { // not used in this program but i'll leave it here
+	else if (strcmp(valueType, "str") == 0) { // not used but i'll leave it here
 		strncpy(outboundValue, "", maximumOutboundBytes);
 		return true;
 	}
 	return false;
 }
 
-bool sendLineAndVerifyEcho(Device* device, const char* lineToSend) {
-	size_t lineLength = strlen(lineToSend);
+static void hexdumpOnFail(const char *label, const unsigned char *buffer, int number) {
+	fprintf(stderr, "%s", label);
+	for (int i = 0; i < number; i++) {
+		fprintf(stderr, " %02X", buffer[i]);
+	}
+	fprintf(stderr, "\n");
+}
+
+bool sendLineAndVerifyEcho(Device* device, const char *lineToSend) {
+	size_t lineLength = strlen(lineToSend); // line to send should already by capitalized
 	char lineWithCR[128]; // device expects CR
+	if (lineLength + 1 >= sizeof(lineWithCR)) {
+		fprintf(stderr, "LINE TOO LONG TO SEND d: %s\n", lineToSend);
+		return false;
+	}
+	snprintf(lineWithCR, sizeof(lineWithCR), "%s\r", lineToSend); // append CR
+
+	flushInput(&device->deviceSerialPort);
+	if (!writeBytes(&device->deviceSerialPort, lineWithCR, strlen(lineWithCR))) {
+		fprintf(stderr, "FAILED TO WRITE COMMAND LINE %s\n", lineToSend);
+		return false;
+	}
 
 	char receivedEcho[128] = { 0 };
-	int receivedEchoByteCount = readLinesUntilEnd(&device->deviceSerialPort, receivedEcho, sizeof(receivedEcho));
-	if (receivedEchoByteCount <= 0)
+	int receivedEchoByteCount = readLinesUntilEnd(device, receivedEcho, sizeof(receivedEcho));
+	if (receivedEchoByteCount <= 0) {
+		fprintf(stderr, "FAILED TO READ ECHO FOR LINE %s\n", lineToSend);
 		return false;
+	}
 
 	char expectedEcho[128] = { 0 };
 	snprintf(expectedEcho, sizeof(expectedEcho), "%s\r", lineToSend);
 
 	if (strcmp(receivedEcho, expectedEcho) != 0) {
-		fprintf(stderr, "ECHO MISTMATCH \nSENT : %s \nGOT: %s", expectedEcho, receivedEcho);
+		fprintf(stderr, "ECHO MISMATCH \n SENT : %s \n GOT: %s\n", expectedEcho, receivedEcho);
+		hexdumpOnFail("SENT HEX", expectedEcho, (int)strlen((char *)expectedEcho));
+		hexdumpOnFail("GOT HEX", receivedEcho, (int)strlen((char *)receivedEcho));
 		return false;
 	}
 	return true;
 }
 
-bool readDeviceBoolReply(Device* device, bool* outputReply) {
+bool readDeviceBoolReply(Device* device, bool* boolReplyOutput) {
 	unsigned char byteRead = 0;
 	int numberOfBytesRead = readBytes(&device->deviceSerialPort, &byteRead, 1);
 	if (numberOfBytesRead != 1)
 		return false;
 	if (byteRead == 0xAA) {
-		*outputReply = true;
+		*boolReplyOutput = true;
 		return true;
 	}
 	if (byteRead == 0x55) {
-		*outputReply = false;
+		*boolReplyOutput = false;
 		return true;
 	}
 	return false;
 }
 
-bool readDeviceWordReply(Device* device, uint16_t* outputReply) {
+bool readDeviceWordReply(Device* device, uint16_t* wordReplyOutput) {
 	unsigned char wordBuffer[3] = { 0 };
 	int numberOfBytesRead = readBytes(&device->deviceSerialPort, wordBuffer, 3);
 	if (numberOfBytesRead != 3) {
@@ -136,11 +152,11 @@ bool readDeviceWordReply(Device* device, uint16_t* outputReply) {
 	unsigned int wordChecksum = (0x55 + wordBuffer[0] + wordBuffer[1]) & 0xFF;
 	if (wordBuffer[2] != (unsigned char)wordChecksum)
 		return false;
-	*outputReply = (uint16_t)(wordBuffer[0] << 0 | wordBuffer[1]);
+	*wordReplyOutput = (uint16_t)((wordBuffer[0] << 8) | wordBuffer[1]);
 	return true;
 }
 
-bool readDeviceFloatReply(Device* device, float* outputReply) {
+bool readDeviceFloatReply(Device* device, float* floatReplyOutput) {
 	unsigned char floatBuffer[5] = { 0 };
 	int numberOfBytesRead = readBytes(&device->deviceSerialPort, floatBuffer, 5);
 	if (numberOfBytesRead != 5)
@@ -152,24 +168,25 @@ bool readDeviceFloatReply(Device* device, float* outputReply) {
 	//combine into an uint32 then copy into a float
 	uint32_t combinedInt = ((uint32_t)floatBuffer[0] << 24) | ((uint32_t)floatBuffer[1] << 16) |
 		((uint32_t)floatBuffer[2] << 8) | ((uint32_t)floatBuffer[3]);
-	float combinedFloat = false;
+	float combinedFloat = 0.0f;
 	memcpy(&combinedFloat, &combinedInt, sizeof(combinedFloat));
-	*outputReply = combinedFloat;
+	*floatReplyOutput = combinedFloat;
 	return true;
 }
 
-bool sendCommand(Device* device,
-	const char* commandName,
-	const char* replyType,
-	const char* commandType,
-	bool boolValue, int intValue, double floatValue,
-	bool* outBool, uint16_t* outWord, float* outFloat)
-{
+bool sendCommand(
+	Device *device,
+	const char *commandName,
+	const char *replyVariableType,
+	const char *commandVariableType,
+	bool boolInput, int wordInput, double floatInput,
+	bool *boolReplyOutput, uint16_t *wordReplyOutput, float *floatReplyOutput
+) {
 	char commandLine[128] = { 0 };
-	if (commandType) {
-		char valueText[32] = { 0 };
-		if (formatCommandValue(valueText, sizeof(valueText), commandType, boolValue, intValue, floatValue)) {
-			snprintf(commandLine, sizeof(commandLine), "%s%s", commandName, valueText);
+	if (commandVariableType) {
+		char commandInputValue[32] = { 0 };
+		if (formatCommandValue(commandInputValue, sizeof(commandInputValue), commandVariableType, boolInput, wordInput, floatInput)) {
+			snprintf(commandLine, sizeof(commandLine), "%s%s", commandName, commandInputValue);
 		}
 	}
 	else {
@@ -177,46 +194,48 @@ bool sendCommand(Device* device,
 	}
 	convertToASCII(commandLine);
 
-	if (!sendLineAndVerifyEcho(device, commandLine)) {
-		unsigned char ESC_CHAR = 0x1B;
+	if (!sendLineAndVerifyEcho(device, commandLine)) { // attempt the command twice
+		unsigned char CANCEL_BUFFERED_COMMANDS = 0x1B; // ESC character
+
 		sleepMilliseconds(100);
-		writeBytes(&device->deviceSerialPort, &ESC_CHAR, 1);
+		writeBytes(&device->deviceSerialPort, &CANCEL_BUFFERED_COMMANDS, 1);
 		sleepMilliseconds(100);
+
 		if (!sendLineAndVerifyEcho(device, commandLine)) {
-			fprintf(stderr, "FAILED TO SEND COMMAND %s\n", commandLine);
+			fprintf(stderr, "FAILED TO SEND COMMAND %s", commandLine);
 			return false;
 		}
 	}
 
-	if (strcmp(replyType, "bool") == 0) {
-		bool value = false;
-		if (!readDeviceBoolReply(device, &value)) {
-			fprintf(stderr, "FAILED TO READ BOOL REPLY FOR COMMAND %s\n", commandLine);
+	if (strcmp(replyVariableType, "bool") == 0) {
+		bool receivedBoolReply = false;
+		if (!readDeviceBoolReply(device, &receivedBoolReply)) {
+			fprintf(stderr, "FAILED TO READ BOOL REPLY FOR COMMAND %s", commandLine);
 			return false;
 		}
-		if (outBool)
-			*outBool = value;
+		if (boolReplyOutput)
+			*boolReplyOutput = receivedBoolReply;
 	}
-	else if (strcmp(replyType, "float") == 0) {
-		float value = 0;
-		if (!readDeviceFloatReply(device, &value)) {
-			fprintf(stderr, "FAILED TO READ FLOAT REPLY FOR COMMAND %s\n", commandLine);
+	else if (strcmp(replyVariableType, "float") == 0) {
+		float receivedFloatReply = 0;
+		if (!readDeviceFloatReply(device, &receivedFloatReply)) {
+			fprintf(stderr, "FAILED TO READ FLOAT REPLY FOR COMMAND %s", commandLine);
 			return false;
 		}
-		if (outFloat)
-			*outFloat = value;
+		if (floatReplyOutput)
+			*floatReplyOutput = receivedFloatReply;
 	}
-	else if (strcmp(replyType, "word") == 0) {
-		uint16_t value = 0;
-		if (!readDeviceWordReply(device, &value)) {
-			fprintf(stderr, "FAILED TO READ WORD REPLY FOR COMMAND %s\n", commandLine);
+	else if (strcmp(replyVariableType, "word") == 0) {
+		uint16_t receivedWordReply = 0;
+		if (!readDeviceWordReply(device, &receivedWordReply)) {
+			fprintf(stderr, "FAILED TO READ WORD REPLY FOR COMMAND %s", commandLine);
 			return false;
 		}
-		if (outWord)
-			*outWord = value;
+		if (wordReplyOutput)
+			*wordReplyOutput = receivedWordReply;
 	}
 	else {
-		fprintf(stderr, "UNKNOWN REPLY TYPE %s FOR COMMAND %s\n", replyType, commandLine);
+		fprintf(stderr, "UNKNOWN REPLY TYPE %s FOR COMMAND %s", replyVariableType, commandLine);
 		return false;
 	}
 
@@ -224,38 +243,48 @@ bool sendCommand(Device* device,
 	return true;
 }
 
-bool setBinaryMode(Device* device, bool enableBinaryMode) {
-	if (enableBinaryMode) {
-		return sendCommand(device, "GMS", "word", "word", false, 8, 0.0, NULL, NULL, NULL);
+bool setBinaryMode(Device* device, bool binaryModeEnabled) {
+	/*
+	if (binaryModeEnabled) {
+		return sendCommand(device, "GMS8", "word", "word", false, 8, 0.0, NULL, NULL, NULL);
 	}
 	else {
-		return sendCommand(device, "GMC", "word", "word", false, 8, 0.0, NULL, NULL, NULL);
+		return sendCommand(device, "GMC8", "word", "word", false, 8, 0.0, NULL, NULL, NULL);
 	}
+	*/
+	const char *command = binaryModeEnabled ? "GMS8" : "GMC8";
+	return sendLineAndVerifyEcho(device, command);
 }
 
 bool connectToDevice(Device* device, const char* portName) {
 	memset(device, 0, sizeof(*device));
 	if (!openSerialPort(&device->deviceSerialPort, portName, 9600)) {
 		fprintf(stderr, "FAILED TO OPEN SERIAL PORT %s\n", portName);
-		return false;
+		goto fail;
 	}
 	if (!handshakeByEcho(device, 1000)) {
 		fprintf(stderr, "FAILED TO HANDSHAKE WITH DEVICE ON PORT %s\n", portName);
-		closeSerialPort(&device->deviceSerialPort);
-		return false;
+		goto fail;
+	}
+	if (!sendLineAndVerifyEcho(device, "GX R")) {
+		fprintf(stderr, "FAILED TO ENTER EXTERNAL CONTROL\n");
+		goto fail;
 	}
 	if (!setBinaryMode(device, true)) {
 		fprintf(stderr, "FAILED TO ENABLE BINARY MODE\n");
-		closeSerialPort(&device->deviceSerialPort);
-		return false;
+		goto fail;
 	}
 
 	device->deviceIsConnected = true;
 	return true;
+
+	fail:
+		closeSerialPort(&device->deviceSerialPort);
+		return false;
 }
 
 void disconnectFromDevice(Device* device) {
-	if (!device && !device->deviceIsConnected) {
+	if (!device || !device->deviceIsConnected) {
 		return;
 	}
 

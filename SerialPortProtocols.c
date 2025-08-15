@@ -1,37 +1,38 @@
 #define _CRT_SECURE_NO_WARNINGS
 
-#include <windows.h>
-#include <stdio.h>
-#include <stdbool.h>
-#include <stdint.h>
-#include <ctype.h>
-#include <string.h>
-#include <time.h>
-
 #include "SerialPortProtocols.h"
-#include "OstechProtocols.h"
 
 void sleepMilliseconds(unsigned int milliseconds) {
 	Sleep(milliseconds);
 }
 
-bool setDeviceControlBook(DCB* deviceControlBook, SerialPort* selectedPort, DWORD baudRate) {
-	deviceControlBook->DCBlength = sizeof(deviceControlBook);
-	if (!GetCommState(selectedPort->serialHandle, &deviceControlBook)) {
+static bool setDeviceControlBook(DCB* deviceControlBook, SerialPort* selectedPort, DWORD baudRate) {
+	ZeroMemory(deviceControlBook, sizeof(*deviceControlBook));
+	deviceControlBook->DCBlength = sizeof(*deviceControlBook);
+
+	if (!GetCommState(selectedPort->serialHandle, deviceControlBook)) {
 		fprintf(stderr, "GETCOMMSTATE FAILED (ERROR %lu)\n", GetLastError());
 		CloseHandle(selectedPort->serialHandle);
 		return false;
 	}
 
 	deviceControlBook->BaudRate = baudRate;
-	deviceControlBook->ByteSize = 9;
+	deviceControlBook->ByteSize = 8; // 8N1
 	deviceControlBook->Parity = NOPARITY;
 	deviceControlBook->StopBits = ONESTOPBIT;
 	deviceControlBook->fBinary = TRUE;
 	deviceControlBook->fParity = FALSE;
+
+	if (!SetCommState(selectedPort->serialHandle, deviceControlBook)) {
+		fprintf(stderr, "SETCOMMSTATE FAILED (ERROR %lu)\n", GetLastError());
+		CloseHandle(selectedPort->serialHandle);
+		return false;
+	}
+	return true;
 }
 
-void setDeviceTimeouts(COMMTIMEOUTS* timeOut, SerialPort* selectedPort, DWORD baudRate) {
+static void setDeviceTimeouts(COMMTIMEOUTS* timeOut, SerialPort* selectedPort, DWORD baudRate) {
+	ZeroMemory(timeOut, sizeof(*timeOut));
 	timeOut->ReadIntervalTimeout = selectedPort->readTimeoutMilliseconds;
 	timeOut->ReadTotalTimeoutMultiplier = 0;
 	timeOut->ReadTotalTimeoutConstant = selectedPort->readTimeoutMilliseconds;
@@ -47,7 +48,7 @@ bool openSerialPort(SerialPort* selectedPort, const char* portName, DWORD baudRa
 	selectedPort->writeTimeoutMilliseconds = 1000;
 
 	char fullName[128];
-	snprintf(fullName, sizeof(fullName), "\\\\.\\%s", portName); // Prefix that is needed for COM10 and over on Windwos (allegedly)
+	snprintf(fullName, sizeof(fullName), "\\\\.\\%s", portName); // Prefix that is needed for COM10 and over on Windwos (allegedly). should be fine for COM1 through COM9
 	strncpy(selectedPort->portName, fullName, sizeof(selectedPort->portName) - 1);
 
 	selectedPort->serialHandle = CreateFileA(
@@ -59,7 +60,10 @@ bool openSerialPort(SerialPort* selectedPort, const char* portName, DWORD baudRa
 	}
 
 	DCB deviceControlBook = { 0 };
-	return setDeviceControlBook(&deviceControlBook, selectedPort, baudRate);
+	if (!setDeviceControlBook(&deviceControlBook, selectedPort, baudRate)) {
+		CloseHandle(selectedPort->serialHandle);
+		return false;
+	}
 
 	COMMTIMEOUTS timeOut = { 0 };
 	setDeviceTimeouts(&timeOut, selectedPort, baudRate);
@@ -109,4 +113,4 @@ int readBytes(SerialPort* selectedPort, void* dataToRead, size_t lengthToRead) {
 void flushInput(SerialPort* selectedPort) {
 	if (selectedPort && selectedPort->isOpen)
 		PurgeComm(selectedPort->serialHandle, PURGE_RXCLEAR);
-} // flush means clear any data in the input
+}

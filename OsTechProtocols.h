@@ -1,9 +1,9 @@
+//	OsTechProtocols.h
+
 #ifndef OSTECH_PROTOCOLS_H
 #define OSTECH_PROTOCOLS_H
 
 #include "SerialPortProtocols.h"
-#include "OsTechProtocols.h"
-#include <stdint.h>
 
 typedef struct {
 	SerialPort	deviceSerialPort;
@@ -34,7 +34,7 @@ bool sendCommand(Device* device,
 	bool boolValue, int intValue, double floatValue,
 	bool* outBool, uint16_t* outWord, float* outFloat);
 
-bool setBinaryMode(Device* device, bool enableBinaryMode);
+bool setBinaryMode(Device* device, bool binaryModeEnabled);
 
 bool connectToDevice(Device* device, const char* portName);
 

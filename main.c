@@ -1,22 +1,16 @@
 #define _CRT_SECURE_NO_WARNINGS
 
-#include <windows.h>
-#include <stdio.h>
-#include <stdbool.h>
-#include <stdint.h>
-#include <ctype.h>
-#include <string.h>
-#include <time.h>
-
 #include "SerialPortProtocols.h"
-#include "OstechProtocols.h"
+#include "OsTechProtocols.h"
 
 // application
 
 static volatile bool stopPolling = false;
 
 static DWORD WINAPI temperaturePollingThread(LPVOID parameter) {
+	sleepMilliseconds(250);
 	Device *device = (Device*)parameter;
+
 	while (!stopPolling) {
 		float currentTemperatureCelsius = 0.0f;
 		if (sendCommand(device, "1TA", "float", NULL, false, 0, 0.0, NULL, NULL, &currentTemperatureCelsius)) {
@@ -25,8 +19,9 @@ static DWORD WINAPI temperaturePollingThread(LPVOID parameter) {
 		else {
 			fprintf(stderr, "FAILED TO GET TEMPERATURE\n");
 		}
-		sleepMilliseconds(5000);
+		sleepMilliseconds(1000);
 	}
+
 	return 0;
 }
 
@@ -42,11 +37,13 @@ static void startMenu(void) {
 	printf("8) Read Current LCT\n");
 	printf("9) Quit (safe shutdown)\n");
 	printf("Choose: ");
+
 	fflush(stdout);
 }
 
 int main(int argc, char** argv) {
 	const char* portName = "COM5";
+
 	if (argc >= 2) {
 		portName = argv[1]; // allow overriding;
 	}
@@ -59,9 +56,16 @@ int main(int argc, char** argv) {
 
     printf("Connected to device on port %s\n", connectedDevice.deviceSerialPort.portName);
 
-	HANDLE pollingThreadHandle = CreateThread(
-		NULL, 0, temperaturePollingThread, &connectedDevice, 0, NULL
-	);
+	// Initial check
+	bool mainLaserOn = false;
+	bool pilotLaserOn = false;
+	if (!sendCommand(&connectedDevice, "L", "bool", NULL, false, 0, 0.0, &mainLaserOn, NULL, NULL))
+		fprintf(stderr, "FAILED TO READ MAIN LASER STATE\n");
+	if (!sendCommand(&connectedDevice, "PL", "bool", NULL, false, 0, 0.0, &pilotLaserOn, NULL, NULL))
+		fprintf(stderr, "FAILED TO READ PILOT LASER STATEr\n");
+
+	HANDLE pollingThreadHandle = CreateThread(NULL, 0, temperaturePollingThread, &connectedDevice, 0, NULL);
+	// Apparently creating this thread before running the initial check causes interlacing and echo mismatch
 
 	while (true) {
 		startMenu();
@@ -74,36 +78,44 @@ int main(int argc, char** argv) {
 
 		switch (selectedOption) {
 			case 1: {
-				bool mainLaserStatus = false;
-				if (!sendCommand(&connectedDevice, "L", "bool", "bool", false, 0, 0.0, &mainLaserStatus, NULL, NULL)) {
-					fprintf(stderr, "Failed to toggle main laser\n");
+				printf("Main laser was %s\n", mainLaserOn ? "ON" : "OFF");
+
+				bool mainLaserDesiredState = !mainLaserOn;
+				if (!sendCommand(&connectedDevice, "L", "bool", "bool", mainLaserDesiredState, 0, 0.0, &mainLaserOn, NULL, NULL)) {
+					fprintf(stderr, "FAILED TO TOGGLE MAIN LASER STATE\n");
 				}
 				else {
-					printf("Main Laser is now %s\n", mainLaserStatus ? "ON" : "OFF");
+					printf("Main Laser is now %s\n", mainLaserDesiredState ? "ON" : "OFF");
 				}
 				break;
 			}
-			case 2: {// Toggle Pilot Laser 
-				bool pilotLaserStatus = false;
-				if (!sendCommand(&connectedDevice, "PL", "bool", "bool", false, 0, 0.0, pilotLaserStatus, NULL, NULL)) {
-					fprintf(stderr, "Failed to toggle pilot laser\n");
+			case 2: {
+				printf("Pilot laser was %s\n", pilotLaserOn ? "ON" : "OFF");
+
+				bool pilotLaserDesiredState = !pilotLaserOn;
+				if (!sendCommand(&connectedDevice, "PL", "bool", "bool", pilotLaserDesiredState, 0, 0.0, &pilotLaserOn, NULL, NULL)) {
+					fprintf(stderr, "FAILED TO TOGGLE MAIN LASER STATE\n");
 				}
 				else {
-					printf("Pilot Laser is now %s\n", pilotLaserStatus ? "ON" : "OFF");
+					printf("Pilot Laser is now %s\n", pilotLaserDesiredState ? "ON" : "OFF");
 				}
 				break;
 			}
 			case 3: { // Set Laser Current Target
-				//
+				// TODO
+				continue;
 			}
 			case 4: { // Timed Run
-				//
+				// TODO
+				continue;
 			}
 			case 5: { // Set Pulse Width
-				//
+				// TODO
+				continue;
 			}
 			case 6: { // Set Pulse Period
-				//
+				// TODO
+				continue;
 			}
 		}
 	}

@@ -1,7 +1,14 @@
 #ifndef SERIAL_PORT_PROTOCOLS_H
 #define SERIAL_PORT_PROTOCOLS_H
 
+// All needed headers here
 #include <windows.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdint.h>
+#include <ctype.h>
+#include <string.h>
+#include <time.h>
 
 typedef struct {
 	HANDLE	serialHandle;
@@ -12,12 +19,6 @@ typedef struct {
 } SerialPort;
 
 void sleepMilliseconds(unsigned int milliseconds);
-
-void sleepMilliseconds(unsigned int milliseconds);
-
-bool setDeviceControlBook(DCB* deviceControlBook, SerialPort* selectedPort, DWORD baudRate);
-
-void setDeviceTimeouts(COMMTIMEOUTS* timeOut, SerialPort* selectedPort, DWORD baudRate);
 
 bool openSerialPort(SerialPort* selectedPort, const char* portName, DWORD baudRate);
 
