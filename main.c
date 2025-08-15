@@ -8,7 +8,7 @@
 static volatile bool stopPolling = false;
 
 static DWORD WINAPI temperaturePollingThread(LPVOID parameter) {
-	sleepMilliseconds(250);
+	sleepMilliseconds(100); // Sleep so we don't get to close to the main thread
 	Device *device = (Device*)parameter;
 
 	while (!stopPolling) {
