@@ -65,7 +65,8 @@ int main(int argc, char** argv) {
 		fprintf(stderr, "FAILED TO READ PILOT LASER STATEr\n");
 
 	HANDLE pollingThreadHandle = CreateThread(NULL, 0, temperaturePollingThread, &connectedDevice, 0, NULL);
-	// Apparently creating this thread before running the initial check causes interlacing and echo mismatch
+	// Apparently creating this thread before running the initial check causes interlacing and an echo mismatch
+	// replies from the initial check are buffered into the handshake echo
 
 	while (true) {
 		startMenu();

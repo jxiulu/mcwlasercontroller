@@ -6,10 +6,12 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
 set(Sources
-    main.c
-    OsTechProtocols.c
-    SerialPortProtocols.c
+    src/main.c
+    src/OsTechProtocols.c
+    src/SerialPortProtocols.c
 )
 
 
