@@ -8,7 +8,7 @@
 static volatile bool stopPolling = false;
 
 static DWORD WINAPI pollingThread(LPVOID parameter) {
-	sleepMilliseconds(100); // Sleep so we don't get to close to the main thread
+	SleepMs(100); // Sleep so we don't get to close to the main thread
 	Device *device = (Device*)parameter;
 
 	while (!stopPolling) {
@@ -20,7 +20,7 @@ static DWORD WINAPI pollingThread(LPVOID parameter) {
 		else {
 			fprintf(stderr, "FAILED TO GET TEMPERATURE\n");
 		}
-		sleepMilliseconds(1000);
+		SleepMs(1000);
 	}
 
 	return 0;

@@ -44,7 +44,7 @@ bool handshakeByEcho(Device* device, unsigned int timeOutMilliseconds) {
 			flushInput(&device->deviceSerialPort);
 			return true;
 		}
-		sleepMilliseconds(50);
+		SleepMs(50);
 	}
 
 	flushInput(&device->deviceSerialPort);
@@ -191,9 +191,9 @@ bool sendFormattedCommandLine(Device* targetDevice, char* commandLine) {
 	if (!sendLineAndVerifyEcho(targetDevice, commandLine)) { // attempt the command twice
 		unsigned char CANCEL_BUFFERED_COMMANDS = 0x1B; // ESC character
 
-		sleepMilliseconds(100);
+		SleepMs(100);
 		writeBytes(&targetDevice->deviceSerialPort, &CANCEL_BUFFERED_COMMANDS, 1);
-		sleepMilliseconds(100);
+		SleepMs(100);
 
 		if (!sendLineAndVerifyEcho(targetDevice, commandLine)) {
 			fprintf(stderr, "FAILED TO SEND COMMAND %s", commandLine);
