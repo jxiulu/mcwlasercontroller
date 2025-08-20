@@ -174,15 +174,7 @@ bool readDeviceFloatReply(Device* device, float* floatReplyOutput) {
 	return true;
 }
 
-bool sendCommand(
-	Device *device,
-	const char *commandName,
-	const char *replyVariableType,
-	const char *commandVariableType,
-	bool boolInput, int wordInput, double floatInput,
-	bool *boolReplyOutput, uint16_t *wordReplyOutput, float *floatReplyOutput
-) {
-	char commandLine[128] = { 0 };
+void formatCommandLine(const char* commandName, const char* commandVariableType, bool boolInput, int wordInput, double floatInput, char* commandLine) {
 	if (commandVariableType) {
 		char commandInputValue[32] = { 0 };
 		if (formatCommandValue(commandInputValue, sizeof(commandInputValue), commandVariableType, boolInput, wordInput, floatInput)) {
@@ -193,20 +185,41 @@ bool sendCommand(
 		snprintf(commandLine, sizeof(commandLine), "%s", commandName);
 	}
 	convertToASCII(commandLine);
+}
 
-	if (!sendLineAndVerifyEcho(device, commandLine)) { // attempt the command twice
+bool sendFormattedCommandLine(Device* targetDevice, char* commandLine) {
+	if (!sendLineAndVerifyEcho(targetDevice, commandLine)) { // attempt the command twice
 		unsigned char CANCEL_BUFFERED_COMMANDS = 0x1B; // ESC character
 
 		sleepMilliseconds(100);
-		writeBytes(&device->deviceSerialPort, &CANCEL_BUFFERED_COMMANDS, 1);
+		writeBytes(&targetDevice->deviceSerialPort, &CANCEL_BUFFERED_COMMANDS, 1);
 		sleepMilliseconds(100);
 
-		if (!sendLineAndVerifyEcho(device, commandLine)) {
+		if (!sendLineAndVerifyEcho(targetDevice, commandLine)) {
 			fprintf(stderr, "FAILED TO SEND COMMAND %s", commandLine);
 			return false;
 		}
 	}
+	return true;	
+}
 
+bool sendCommand(
+	Device *device,
+	const char *commandName,
+	const char *replyVariableType,
+	const char *commandVariableType,
+	bool boolInput, int wordInput, double floatInput,
+	bool *boolReplyOutput, uint16_t *wordReplyOutput, float *floatReplyOutput
+) {
+
+	char commandLine[128] = { 0 };
+	formatCommandLine(commandName, commandVariableType, boolInput, wordInput, floatInput, commandLine);
+	if (!sendFormattedCommandLine(device, commandLine)) {
+		return false;
+	}
+
+	// Read the command
+	// This function is a placeholder master function for now
 	if (strcmp(replyVariableType, "bool") == 0) {
 		bool receivedBoolReply = false;
 		if (!readDeviceBoolReply(device, &receivedBoolReply)) {
@@ -293,4 +306,60 @@ void disconnectFromDevice(Device* device) {
 	setBinaryMode(device, false);
 	closeSerialPort(&device->deviceSerialPort);
 	device->deviceIsConnected = false;
+}
+
+// Individual Variable Type Send Functions
+
+bool SendBoolCommand(bool ReadOnly, Device* TargetDevice, char* CommandString, bool SetBool, bool* GetBool) {
+	char *commandType = "bool";
+	if (ReadOnly) commandType = NULL;
+
+	char commandLine[128] = { 0 };
+	formatCommandLine(CommandString, commandType, SetBool, 0, 0.0f, commandLine);
+	sendFormattedCommandLine(TargetDevice, commandLine);
+
+	bool deviceReply = false;
+	if (!readDeviceBoolReply(TargetDevice, &deviceReply)) {
+		fprintf(stderr, "FAILED TO READ BOOL REPLY FOR COMMAND %s", commandLine);
+		return false;
+	}
+
+	*GetBool = deviceReply;
+	return true;
+}
+
+bool SendFloatCommand(bool ReadOnly, Device* TargetDevice, char* CommandString, float SetFloat, float* GetFloat) {
+	char *commandType = "float";
+	if (ReadOnly) commandType = NULL;
+	
+	char commandLine[128] = { 0 };
+	formatCommandLine(CommandString, commandType, false, 0, SetFloat, commandLine);
+	if (!sendFormattedCommandLine(TargetDevice, commandLine)) return false;
+
+	float deviceReply = 0.0f;
+	if (!readDeviceFloatReply(TargetDevice, &deviceReply)) {
+		fprintf(stderr, "FAILED TO READ FLOAT REPLY FOR COMMAND %s", commandLine);
+		return false;
+	}
+
+	*GetFloat = deviceReply;
+	return true;
+}
+
+bool SendWordCommand(bool ReadOnly, Device* TargetDevice, char* CommandString, int SetWord, uint16_t* GetWord) {
+	char *commandType = "word";
+	if (ReadOnly) commandType = NULL;
+	
+	char commandLine[128] = { 0 };
+	formatCommandLine(CommandString, commandType, false, SetWord, 0.0f, commandLine);
+	if (!sendFormattedCommandLine(TargetDevice, commandLine)) return false;
+
+	uint16_t deviceReply = 0;
+	if (!readDeviceWordReply(TargetDevice, &deviceReply)) {
+		fprintf(stderr, "FAILED TO READ WORD REPLY FOR COMMAND %s", commandLine);
+		return false;
+	}
+
+	*GetWord = deviceReply;
+	return true;
 }

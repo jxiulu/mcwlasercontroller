@@ -6,7 +6,7 @@ void sleepMilliseconds(unsigned int milliseconds) {
 	Sleep(milliseconds);
 }
 
-static bool setDeviceControlBook(DCB* deviceControlBook, SerialPort* selectedPort, DWORD baudRate) {
+static void setDeviceControlBook(DCB* deviceControlBook, SerialPort* selectedPort, DWORD baudRate) {
 	ZeroMemory(deviceControlBook, sizeof(*deviceControlBook));
 	deviceControlBook->DCBlength = sizeof(*deviceControlBook);
 
@@ -60,10 +60,7 @@ bool openSerialPort(SerialPort* selectedPort, const char* portName, DWORD baudRa
 	}
 
 	DCB deviceControlBook = { 0 };
-	if (!setDeviceControlBook(&deviceControlBook, selectedPort, baudRate)) {
-		CloseHandle(selectedPort->serialHandle);
-		return false;
-	}
+	setDeviceControlBook(&deviceControlBook, selectedPort, baudRate);
 
 	COMMTIMEOUTS timeOut = { 0 };
 	setDeviceTimeouts(&timeOut, selectedPort, baudRate);

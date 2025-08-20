@@ -12,6 +12,7 @@ set(Sources
     src/main.c
     src/OsTechProtocols.c
     src/SerialPortProtocols.c
+    src/threadsafety.c
 )
 
 
