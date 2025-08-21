@@ -27,21 +27,23 @@ bool readDeviceWordReply(Device* device, uint16_t* outputReply);
 
 bool readDeviceFloatReply(Device* device, float* outputReply);
 
-bool sendCommand(
-	Device *device,
-	const char *commandName,
-	const char *replyVariableType,
-	const char *commandVariableType,
-	bool boolInput, int wordInput, double floatInput,
-	bool *boolReplyOutput, uint16_t *wordReplyOutput, float *floatReplyOutput);
-
 bool setBinaryMode(Device* device, bool binaryModeEnabled);
 
-bool connectToDevice(Device* device, const char* portName);
+bool ConnectDevice(Device* device, const char* portName);
 
-void disconnectFromDevice(Device* device);
+bool DisconnectDevice(Device* device);
 
-// Type-specific command functions
+// Send Command Functions
+
+bool SendGeneralCommand(
+	Device *TargetDevice,
+	const char *CommandString,
+	const char *ReplyVariableType,
+	const char *InputVariableType,
+	bool SetBool, int SetWord, double SetFloat,
+	bool *GetBool, uint16_t *GetWord, float *GetFloat
+);
+
 bool SendBoolCommand(bool ReadOnly, Device* TargetDevice, char* CommandString, bool SetBool, bool* GetBool);
 
 bool SendFloatCommand(bool ReadOnly, Device* TargetDevice, char* CommandString, float SetFloat, float* GetFloat);

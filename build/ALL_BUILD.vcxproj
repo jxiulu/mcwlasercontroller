@@ -178,6 +178,18 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{435E8BBC-AA62-3E6B-901C-1251788B7B52}</Project>
       <Name>MCWLaser</Name>
     </ProjectReference>
+    <ProjectReference Include="C:\Users\yglu1\OneDrive\Documents\Projects\MCWLaser\mcwlasercontroller\build\gui\imgui.vcxproj">
+      <Project>{551D765D-66CA-347B-9446-D6C9AD168892}</Project>
+      <Name>imgui</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\yglu1\OneDrive\Documents\Projects\MCWLaser\mcwlasercontroller\build\lasercontrol.vcxproj">
+      <Project>{FEE3377B-2B95-3776-9CC0-B46DFCFF2B39}</Project>
+      <Name>lasercontrol</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\yglu1\OneDrive\Documents\Projects\MCWLaser\mcwlasercontroller\build\gui\laserinterface.vcxproj">
+      <Project>{8E4E1B62-D302-3096-8313-1F9B25C06E73}</Project>
+      <Name>laserinterface</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

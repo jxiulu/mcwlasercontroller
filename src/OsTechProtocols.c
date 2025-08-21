@@ -3,6 +3,9 @@
 #include "SerialPortProtocols.h"
 #include "OstechProtocols.h"
 
+
+// Lumics OsTech Protocols 
+
 void convertToASCII(char* input) {
 	for (; *input; ++input)
 		*input = (char)toupper((unsigned char)*input);
@@ -174,141 +177,106 @@ bool readDeviceFloatReply(Device* device, float* floatReplyOutput) {
 	return true;
 }
 
-void formatCommandLine(const char* commandName, const char* commandVariableType, bool boolInput, int wordInput, double floatInput, char* commandLine) {
+static void formatCommandLine(const char* commandString, const char* commandVariableType, bool boolInput, int wordInput, double floatInput, char* commandLine) {
 	if (commandVariableType) {
 		char commandInputValue[32] = { 0 };
 		if (formatCommandValue(commandInputValue, sizeof(commandInputValue), commandVariableType, boolInput, wordInput, floatInput)) {
-			snprintf(commandLine, sizeof(commandLine), "%s%s", commandName, commandInputValue);
+			snprintf(commandLine, sizeof(commandLine), "%s%s", commandString, commandInputValue);
 		}
 	}
 	else {
-		snprintf(commandLine, sizeof(commandLine), "%s", commandName);
+		snprintf(commandLine, sizeof(commandLine), "%s", commandString);
 	}
 	convertToASCII(commandLine);
 }
 
-bool sendFormattedCommandLine(Device* targetDevice, char* commandLine) {
+static bool sendCommandLine(Device* targetDevice, char* commandLine) {
 	if (!sendLineAndVerifyEcho(targetDevice, commandLine)) { // attempt the command twice
-		unsigned char CANCEL_BUFFERED_COMMANDS = 0x1B; // ESC character
+		unsigned char CANCEL_BUFFERED_COMMANDS = 0x1B; // ESC
 
 		SleepMs(100);
 		writeBytes(&targetDevice->deviceSerialPort, &CANCEL_BUFFERED_COMMANDS, 1);
 		SleepMs(100);
 
 		if (!sendLineAndVerifyEcho(targetDevice, commandLine)) {
-			fprintf(stderr, "FAILED TO SEND COMMAND %s", commandLine);
 			return false;
 		}
 	}
 	return true;	
 }
 
-bool sendCommand(
-	Device *device,
-	const char *commandName,
-	const char *replyVariableType,
-	const char *commandVariableType,
-	bool boolInput, int wordInput, double floatInput,
-	bool *boolReplyOutput, uint16_t *wordReplyOutput, float *floatReplyOutput
+bool setBinaryMode(Device* device, bool binaryModeEnabled) {
+	/*
+	if (binaryModeEnabled) {
+		return SendGeneralCommand(device, "GMS8", "word", "word", false, 8, 0.0, NULL, NULL, NULL);
+	}
+	else {
+		return SendGeneralCommand(device, "GMC8", "word", "word", false, 8, 0.0, NULL, NULL, NULL);
+	}
+	*/
+	const char *setBinaryCommand = binaryModeEnabled ? "GMS8" : "GMC8";
+	return sendLineAndVerifyEcho(device, setBinaryCommand);
+}
+
+
+// Send Functions
+
+bool SendGeneralCommand(
+	Device *TargetDevice,
+	const char *CommandString,
+	const char *ReplyVariableType,
+	const char *InputVariableType,
+	bool SetBool, int SetWord, double SetFloat,
+	bool *GetBool, uint16_t *GetWord, float *GetFloat
 ) {
+	// Placeholder master function for sending commands
 
 	char commandLine[128] = { 0 };
-	formatCommandLine(commandName, commandVariableType, boolInput, wordInput, floatInput, commandLine);
-	if (!sendFormattedCommandLine(device, commandLine)) {
+
+	formatCommandLine(CommandString, InputVariableType, SetBool, SetWord, SetFloat, commandLine);
+
+	if (!sendCommandLine(TargetDevice, commandLine)) {
+		fprintf(stderr, "FAILED TO SEND COMMAND %s\n", commandLine);
 		return false;
 	}
 
 	// Read the command
-	// This function is a placeholder master function for now
-	if (strcmp(replyVariableType, "bool") == 0) {
+	if (strcmp(ReplyVariableType, "bool") == 0) {
 		bool receivedBoolReply = false;
-		if (!readDeviceBoolReply(device, &receivedBoolReply)) {
-			fprintf(stderr, "FAILED TO READ BOOL REPLY FOR COMMAND %s", commandLine);
+		if (!readDeviceBoolReply(TargetDevice, &receivedBoolReply)) {
+			fprintf(stderr, "FAILED TO READ BOOL REPLY FOR COMMAND %s\n", commandLine);
 			return false;
 		}
-		if (boolReplyOutput)
-			*boolReplyOutput = receivedBoolReply;
+		if (GetBool)
+			*GetBool = receivedBoolReply;
 	}
-	else if (strcmp(replyVariableType, "float") == 0) {
+	else if (strcmp(ReplyVariableType, "float") == 0) {
 		float receivedFloatReply = 0;
-		if (!readDeviceFloatReply(device, &receivedFloatReply)) {
-			fprintf(stderr, "FAILED TO READ FLOAT REPLY FOR COMMAND %s", commandLine);
+		if (!readDeviceFloatReply(TargetDevice, &receivedFloatReply)) {
+			fprintf(stderr, "FAILED TO READ FLOAT REPLY FOR COMMAND %s\n", commandLine);
 			return false;
 		}
-		if (floatReplyOutput)
-			*floatReplyOutput = receivedFloatReply;
+		if (GetFloat)
+			*GetFloat = receivedFloatReply;
 	}
-	else if (strcmp(replyVariableType, "word") == 0) {
+	else if (strcmp(ReplyVariableType, "word") == 0) {
 		uint16_t receivedWordReply = 0;
-		if (!readDeviceWordReply(device, &receivedWordReply)) {
-			fprintf(stderr, "FAILED TO READ WORD REPLY FOR COMMAND %s", commandLine);
+		if (!readDeviceWordReply(TargetDevice, &receivedWordReply)) {
+			fprintf(stderr, "FAILED TO READ WORD REPLY FOR COMMAND %s\n", commandLine);
 			return false;
 		}
-		if (wordReplyOutput)
-			*wordReplyOutput = receivedWordReply;
+		if (GetWord)
+			*GetWord = receivedWordReply;
 	}
 	else {
-		fprintf(stderr, "UNKNOWN REPLY TYPE %s FOR COMMAND %s", replyVariableType, commandLine);
+		fprintf(stderr, "UNKNOWN REPLY TYPE %s FOR COMMAND %s\n", ReplyVariableType, commandLine);
 		return false;
 	}
 
-	flushInput(&device->deviceSerialPort);
+	flushInput(&TargetDevice->deviceSerialPort);
 	return true;
 }
 
-bool setBinaryMode(Device* device, bool binaryModeEnabled) {
-	/*
-	if (binaryModeEnabled) {
-		return sendCommand(device, "GMS8", "word", "word", false, 8, 0.0, NULL, NULL, NULL);
-	}
-	else {
-		return sendCommand(device, "GMC8", "word", "word", false, 8, 0.0, NULL, NULL, NULL);
-	}
-	*/
-	const char *command = binaryModeEnabled ? "GMS8" : "GMC8";
-	return sendLineAndVerifyEcho(device, command);
-}
-
-bool connectToDevice(Device* device, const char* portName) {
-	memset(device, 0, sizeof(*device));
-	if (!openSerialPort(&device->deviceSerialPort, portName, 9600)) {
-		fprintf(stderr, "FAILED TO OPEN SERIAL PORT %s\n", portName);
-		goto fail;
-	}
-	if (!handshakeByEcho(device, 1000)) {
-		fprintf(stderr, "FAILED TO HANDSHAKE WITH DEVICE ON PORT %s\n", portName);
-		goto fail;
-	}
-	if (!sendLineAndVerifyEcho(device, "GX R")) {
-		fprintf(stderr, "FAILED TO ENTER EXTERNAL CONTROL\n");
-		goto fail;
-	}
-	if (!setBinaryMode(device, true)) {
-		fprintf(stderr, "FAILED TO ENABLE BINARY MODE\n");
-		goto fail;
-	}
-
-	device->deviceIsConnected = true;
-	return true;
-
-	fail:
-		closeSerialPort(&device->deviceSerialPort);
-		return false;
-}
-
-void disconnectFromDevice(Device* device) {
-	if (!device || !device->deviceIsConnected) {
-		return;
-	}
-
-	sendCommand(device, "L", "bool", "bool", false, 0, 0.0, NULL, NULL, NULL);
-	sendCommand(device, "PL", "bool", "bool", false, 0, 0.0, NULL, NULL, NULL);
-	setBinaryMode(device, false);
-	closeSerialPort(&device->deviceSerialPort);
-	device->deviceIsConnected = false;
-}
-
-// Individual Variable Type Send Functions
 
 bool SendBoolCommand(bool ReadOnly, Device* TargetDevice, char* CommandString, bool SetBool, bool* GetBool) {
 	char *commandType = "bool";
@@ -316,11 +284,11 @@ bool SendBoolCommand(bool ReadOnly, Device* TargetDevice, char* CommandString, b
 
 	char commandLine[128] = { 0 };
 	formatCommandLine(CommandString, commandType, SetBool, 0, 0.0f, commandLine);
-	sendFormattedCommandLine(TargetDevice, commandLine);
+	sendCommandLine(TargetDevice, commandLine);
 
 	bool deviceReply = false;
 	if (!readDeviceBoolReply(TargetDevice, &deviceReply)) {
-		fprintf(stderr, "FAILED TO READ BOOL REPLY FOR COMMAND %s", commandLine);
+		fprintf(stderr, "FAILED TO READ BOOL REPLY FOR COMMAND %s\n", commandLine);
 		return false;
 	}
 
@@ -334,11 +302,11 @@ bool SendFloatCommand(bool ReadOnly, Device* TargetDevice, char* CommandString, 
 	
 	char commandLine[128] = { 0 };
 	formatCommandLine(CommandString, commandType, false, 0, SetFloat, commandLine);
-	if (!sendFormattedCommandLine(TargetDevice, commandLine)) return false;
+	if (!sendCommandLine(TargetDevice, commandLine)) return false;
 
 	float deviceReply = 0.0f;
 	if (!readDeviceFloatReply(TargetDevice, &deviceReply)) {
-		fprintf(stderr, "FAILED TO READ FLOAT REPLY FOR COMMAND %s", commandLine);
+		fprintf(stderr, "FAILED TO READ FLOAT REPLY FOR COMMAND %s\n", commandLine);
 		return false;
 	}
 
@@ -352,14 +320,68 @@ bool SendWordCommand(bool ReadOnly, Device* TargetDevice, char* CommandString, i
 	
 	char commandLine[128] = { 0 };
 	formatCommandLine(CommandString, commandType, false, SetWord, 0.0f, commandLine);
-	if (!sendFormattedCommandLine(TargetDevice, commandLine)) return false;
+	if (!sendCommandLine(TargetDevice, commandLine)) return false;
 
 	uint16_t deviceReply = 0;
 	if (!readDeviceWordReply(TargetDevice, &deviceReply)) {
-		fprintf(stderr, "FAILED TO READ WORD REPLY FOR COMMAND %s", commandLine);
+		fprintf(stderr, "FAILED TO READ WORD REPLY FOR COMMAND %s\n", commandLine);
 		return false;
 	}
 
 	*GetWord = deviceReply;
 	return true;
+}
+
+
+// Connect and Disconnect
+
+bool ConnectDevice(Device* TargetDevice, const char* PortName) {
+	memset(TargetDevice, 0, sizeof(*TargetDevice));
+
+	if (!OpenSerialPort(&TargetDevice->deviceSerialPort, PortName, 9600)) {
+		fprintf(stderr, "FAILED TO OPEN SERIAL PORT %s\n", PortName);
+		goto fail;
+	}
+	if (!handshakeByEcho(TargetDevice, 1000)) {
+		fprintf(stderr, "FAILED TO HANDSHAKE WITH DEVICE ON PORT %s\n", PortName);
+		goto fail;
+	}
+	if (!sendLineAndVerifyEcho(TargetDevice, "GX R")) {
+		fprintf(stderr, "FAILED TO ENTER EXTERNAL CONTROL\n");
+		goto fail;
+	}
+	if (!setBinaryMode(TargetDevice, true)) {
+		fprintf(stderr, "FAILED TO ENABLE BINARY MODE\n");
+		goto fail;
+	}
+
+	TargetDevice->deviceIsConnected = true;
+	return true;
+
+	fail:
+		CloseSerialPort(&TargetDevice->deviceSerialPort);
+		return false;
+}
+
+bool DisconnectDevice(Device* TargetDevice) {
+	if (!TargetDevice || !TargetDevice->deviceIsConnected) {
+		return true;
+	}
+
+	bool safeToDisconnect = false;
+	if (!SendGeneralCommand(TargetDevice, "PL", "bool", "bool", false, 0, 0.0, NULL, NULL, NULL)) {
+		printf("Warning: failed to disable pilot laser. Program will exit if main laser is disabled.\n");
+		safeToDisconnect = true;
+	}
+	if (!SendGeneralCommand(TargetDevice, "L", "bool", "bool", false, 0, 0.0, NULL, NULL, NULL)) {
+		printf("Warning: failed to disable main laser.\n");
+		safeToDisconnect = false;
+	}
+
+	setBinaryMode(TargetDevice, false);
+	CloseSerialPort(&TargetDevice->deviceSerialPort);
+	TargetDevice->deviceIsConnected = false;
+
+	safeToDisconnect = true;
+	return safeToDisconnect;
 }

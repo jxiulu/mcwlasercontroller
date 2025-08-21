@@ -1,3 +1,15 @@
+C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/lasercontrol.dir
 C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/MCWLaser.dir
+C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/INSTALL.dir
 C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/ALL_BUILD.dir
 C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/gui/CMakeFiles/imgui.dir
+C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/gui/CMakeFiles/laserinterface.dir
+C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/gui/CMakeFiles/INSTALL.dir
+C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/gui_build/CMakeFiles/uninstall.dir
+C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/gui_build/CMakeFiles/INSTALL.dir
+C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/gui_build/CMakeFiles/ALL_BUILD.dir
+C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/gui_build/src/CMakeFiles/glfw.dir
+C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/gui_build/src/CMakeFiles/update_mappings.dir
+C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/gui_build/src/CMakeFiles/INSTALL.dir
+C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/gui_build/docs/CMakeFiles/INSTALL.dir

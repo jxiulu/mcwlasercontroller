@@ -35,18 +35,19 @@ events:
     found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerId.c.in"
     search_context:
       ENV{PATH}:
-        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX86\\x86"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\VCPackages"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\bin\\Roslyn"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Team Tools\\DiagnosticsHub\\Collector"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x86"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x86"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64"
-        - "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\"
+        - "c:\\Users\\yglu1\\.vscode\\cli\\servers\\Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da\\server\\bin\\remote-cli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -56,6 +57,9 @@ events:
         - "C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin\\"
         - "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
         - "C:\\Users\\yglu1\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\yglu1\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -83,7 +87,7 @@ events:
       The output was:
       0
       MSBuild version 17.14.14+a129329f1 for .NET Framework
-      Build started 8/14/2025 10:09:21 PM.
+      Build started 8/20/2025 7:53:15 PM.
       
       Project "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\4.1.0\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -112,7 +116,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:02.24
+      Time Elapsed 00:00:00.83
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -145,18 +149,18 @@ events:
       - "link"
     candidate_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
-      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x86/"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/x86/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/"
-      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/"
+      - "C:/Users/yglu1/.vscode/cli/servers/Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da/server/bin/remote-cli/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -165,6 +169,9 @@ events:
       - "C:/Program Files (x86)/IVI Foundation/VISA/WinNT/Bin/"
       - "C:/Program Files/IVI Foundation/VISA/Win64/Bin/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Sunshine/"
+      - "C:/Program Files/Sunshine/tools/"
       - "C:/Users/yglu1/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/yglu1/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -173,18 +180,19 @@ events:
     found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX86\\x86"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\VCPackages"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\bin\\Roslyn"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Team Tools\\DiagnosticsHub\\Collector"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x86"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x86"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64"
-        - "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\"
+        - "c:\\Users\\yglu1\\.vscode\\cli\\servers\\Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da\\server\\bin\\remote-cli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -194,6 +202,9 @@ events:
         - "C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin\\"
         - "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
         - "C:\\Users\\yglu1\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\yglu1\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -220,18 +231,18 @@ events:
       - "lld-link"
     candidate_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
-      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x86/"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/x86/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/"
-      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/"
+      - "C:/Users/yglu1/.vscode/cli/servers/Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da/server/bin/remote-cli/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -240,6 +251,9 @@ events:
       - "C:/Program Files (x86)/IVI Foundation/VISA/WinNT/Bin/"
       - "C:/Program Files/IVI Foundation/VISA/Win64/Bin/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Sunshine/"
+      - "C:/Program Files/Sunshine/tools/"
       - "C:/Users/yglu1/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/yglu1/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -247,9 +261,6 @@ events:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.exe"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link"
-      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/lld-link.com"
-      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/lld-link.exe"
-      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/lld-link"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/lld-link.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/lld-link.exe"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/lld-link"
@@ -265,24 +276,27 @@ events:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/lld-link.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/lld-link.exe"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/lld-link"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x86/lld-link.com"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x86/lld-link.exe"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x86/lld-link"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/x86/lld-link.com"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/x86/lld-link.exe"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/x86/lld-link"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/lld-link.com"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/lld-link.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/lld-link"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/lld-link.com"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/lld-link.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/lld-link"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/lld-link.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/lld-link.exe"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/lld-link"
-      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/lld-link.com"
-      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/lld-link.exe"
-      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/lld-link"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/lld-link.com"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/lld-link.exe"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/lld-link"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/lld-link.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/lld-link.exe"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/lld-link"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/lld-link.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/lld-link.exe"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/lld-link"
+      - "C:/Users/yglu1/.vscode/cli/servers/Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da/server/bin/remote-cli/lld-link.com"
+      - "C:/Users/yglu1/.vscode/cli/servers/Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da/server/bin/remote-cli/lld-link.exe"
+      - "C:/Users/yglu1/.vscode/cli/servers/Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da/server/bin/remote-cli/lld-link"
       - "C:/Windows/System32/lld-link.com"
       - "C:/Windows/System32/lld-link.exe"
       - "C:/Windows/System32/lld-link"
@@ -307,6 +321,15 @@ events:
       - "C:/Program Files/Git/cmd/lld-link.com"
       - "C:/Program Files/Git/cmd/lld-link.exe"
       - "C:/Program Files/Git/cmd/lld-link"
+      - "C:/Program Files/CMake/bin/lld-link.com"
+      - "C:/Program Files/CMake/bin/lld-link.exe"
+      - "C:/Program Files/CMake/bin/lld-link"
+      - "C:/Program Files/Sunshine/lld-link.com"
+      - "C:/Program Files/Sunshine/lld-link.exe"
+      - "C:/Program Files/Sunshine/lld-link"
+      - "C:/Program Files/Sunshine/tools/lld-link.com"
+      - "C:/Program Files/Sunshine/tools/lld-link.exe"
+      - "C:/Program Files/Sunshine/tools/lld-link"
       - "C:/Users/yglu1/AppData/Local/Microsoft/WindowsApps/lld-link.com"
       - "C:/Users/yglu1/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
       - "C:/Users/yglu1/AppData/Local/Microsoft/WindowsApps/lld-link"
@@ -319,18 +342,19 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX86\\x86"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\VCPackages"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\bin\\Roslyn"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Team Tools\\DiagnosticsHub\\Collector"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x86"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x86"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64"
-        - "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\"
+        - "c:\\Users\\yglu1\\.vscode\\cli\\servers\\Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da\\server\\bin\\remote-cli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -340,6 +364,9 @@ events:
         - "C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin\\"
         - "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
         - "C:\\Users\\yglu1\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\yglu1\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -364,18 +391,18 @@ events:
       - "link"
     candidate_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
-      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x86/"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/x86/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/"
-      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/"
+      - "C:/Users/yglu1/.vscode/cli/servers/Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da/server/bin/remote-cli/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -384,6 +411,9 @@ events:
       - "C:/Program Files (x86)/IVI Foundation/VISA/WinNT/Bin/"
       - "C:/Program Files/IVI Foundation/VISA/Win64/Bin/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Sunshine/"
+      - "C:/Program Files/Sunshine/tools/"
       - "C:/Users/yglu1/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/yglu1/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -392,18 +422,19 @@ events:
     found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX86\\x86"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\VCPackages"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\bin\\Roslyn"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Team Tools\\DiagnosticsHub\\Collector"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x86"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x86"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64"
-        - "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\"
+        - "c:\\Users\\yglu1\\.vscode\\cli\\servers\\Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da\\server\\bin\\remote-cli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -413,6 +444,9 @@ events:
         - "C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin\\"
         - "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
         - "C:\\Users\\yglu1\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\yglu1\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -437,18 +471,18 @@ events:
       - "mt"
     candidate_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
-      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x86/"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/x86/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/"
-      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/"
+      - "C:/Users/yglu1/.vscode/cli/servers/Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da/server/bin/remote-cli/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -457,6 +491,9 @@ events:
       - "C:/Program Files (x86)/IVI Foundation/VISA/WinNT/Bin/"
       - "C:/Program Files/IVI Foundation/VISA/Win64/Bin/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Sunshine/"
+      - "C:/Program Files/Sunshine/tools/"
       - "C:/Users/yglu1/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/yglu1/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -464,9 +501,6 @@ events:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt.exe"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt"
-      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/mt.com"
-      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/mt.exe"
-      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/mt"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/mt.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/mt.exe"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/mt"
@@ -482,22 +516,23 @@ events:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/mt.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/mt.exe"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/mt"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x86/mt.com"
-    found: "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x86/mt.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/mt.com"
+    found: "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/mt.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX86\\x86"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\VCPackages"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\bin\\Roslyn"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Team Tools\\DiagnosticsHub\\Collector"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x86"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x86"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64"
-        - "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\"
+        - "c:\\Users\\yglu1\\.vscode\\cli\\servers\\Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da\\server\\bin\\remote-cli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -507,6 +542,9 @@ events:
         - "C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin\\"
         - "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
         - "C:\\Users\\yglu1\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\yglu1\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -531,18 +569,18 @@ events:
       - "lib"
     candidate_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
-      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x86/"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/x86/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/"
-      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/"
+      - "C:/Users/yglu1/.vscode/cli/servers/Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da/server/bin/remote-cli/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -551,6 +589,9 @@ events:
       - "C:/Program Files (x86)/IVI Foundation/VISA/WinNT/Bin/"
       - "C:/Program Files/IVI Foundation/VISA/Win64/Bin/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Sunshine/"
+      - "C:/Program Files/Sunshine/tools/"
       - "C:/Users/yglu1/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/yglu1/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -559,18 +600,19 @@ events:
     found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lib.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX86\\x86"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\VCPackages"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\bin\\Roslyn"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Team Tools\\DiagnosticsHub\\Collector"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x86"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x86"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64"
-        - "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\"
+        - "c:\\Users\\yglu1\\.vscode\\cli\\servers\\Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da\\server\\bin\\remote-cli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -580,6 +622,9 @@ events:
         - "C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin\\"
         - "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
         - "C:\\Users\\yglu1\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\yglu1\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -610,18 +655,19 @@ events:
     found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
-        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX86\\x86"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\VCPackages"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\bin\\Roslyn"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Team Tools\\DiagnosticsHub\\Collector"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x86"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x86"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64"
-        - "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\"
+        - "c:\\Users\\yglu1\\.vscode\\cli\\servers\\Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da\\server\\bin\\remote-cli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -631,6 +677,9 @@ events:
         - "C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin\\"
         - "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
         - "C:\\Users\\yglu1\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\yglu1\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -658,7 +707,7 @@ events:
       The output was:
       0
       MSBuild version 17.14.14+a129329f1 for .NET Framework
-      Build started 8/14/2025 10:09:24 PM.
+      Build started 8/20/2025 7:53:16 PM.
       
       Project "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\4.1.0\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -687,7 +736,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:02.25
+      Time Elapsed 00:00:00.81
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -720,18 +769,18 @@ events:
       - "lld-link"
     candidate_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
-      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x86/"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/x86/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/"
-      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/"
+      - "C:/Users/yglu1/.vscode/cli/servers/Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da/server/bin/remote-cli/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -740,6 +789,9 @@ events:
       - "C:/Program Files (x86)/IVI Foundation/VISA/WinNT/Bin/"
       - "C:/Program Files/IVI Foundation/VISA/Win64/Bin/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Sunshine/"
+      - "C:/Program Files/Sunshine/tools/"
       - "C:/Users/yglu1/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/yglu1/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -747,9 +799,6 @@ events:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.exe"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link"
-      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/lld-link.com"
-      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/lld-link.exe"
-      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/lld-link"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/lld-link.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/lld-link.exe"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/lld-link"
@@ -765,24 +814,27 @@ events:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/lld-link.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/lld-link.exe"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/lld-link"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x86/lld-link.com"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x86/lld-link.exe"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x86/lld-link"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/x86/lld-link.com"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/x86/lld-link.exe"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/x86/lld-link"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/lld-link.com"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/lld-link.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/lld-link"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/lld-link.com"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/lld-link.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/lld-link"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/lld-link.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/lld-link.exe"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/lld-link"
-      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/lld-link.com"
-      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/lld-link.exe"
-      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/lld-link"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/lld-link.com"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/lld-link.exe"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/lld-link"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/lld-link.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/lld-link.exe"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/lld-link"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/lld-link.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/lld-link.exe"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/lld-link"
+      - "C:/Users/yglu1/.vscode/cli/servers/Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da/server/bin/remote-cli/lld-link.com"
+      - "C:/Users/yglu1/.vscode/cli/servers/Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da/server/bin/remote-cli/lld-link.exe"
+      - "C:/Users/yglu1/.vscode/cli/servers/Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da/server/bin/remote-cli/lld-link"
       - "C:/Windows/System32/lld-link.com"
       - "C:/Windows/System32/lld-link.exe"
       - "C:/Windows/System32/lld-link"
@@ -807,6 +859,15 @@ events:
       - "C:/Program Files/Git/cmd/lld-link.com"
       - "C:/Program Files/Git/cmd/lld-link.exe"
       - "C:/Program Files/Git/cmd/lld-link"
+      - "C:/Program Files/CMake/bin/lld-link.com"
+      - "C:/Program Files/CMake/bin/lld-link.exe"
+      - "C:/Program Files/CMake/bin/lld-link"
+      - "C:/Program Files/Sunshine/lld-link.com"
+      - "C:/Program Files/Sunshine/lld-link.exe"
+      - "C:/Program Files/Sunshine/lld-link"
+      - "C:/Program Files/Sunshine/tools/lld-link.com"
+      - "C:/Program Files/Sunshine/tools/lld-link.exe"
+      - "C:/Program Files/Sunshine/tools/lld-link"
       - "C:/Users/yglu1/AppData/Local/Microsoft/WindowsApps/lld-link.com"
       - "C:/Users/yglu1/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
       - "C:/Users/yglu1/AppData/Local/Microsoft/WindowsApps/lld-link"
@@ -819,18 +880,19 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX86\\x86"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\VCPackages"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\bin\\Roslyn"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Team Tools\\DiagnosticsHub\\Collector"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x86"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x86"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64"
-        - "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\"
+        - "c:\\Users\\yglu1\\.vscode\\cli\\servers\\Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da\\server\\bin\\remote-cli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -840,6 +902,9 @@ events:
         - "C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin\\"
         - "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
         - "C:\\Users\\yglu1\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\yglu1\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -866,18 +931,19 @@ events:
     names:
       - "rc"
     candidate_directories:
-      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x86/"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/x86/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/"
-      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/"
+      - "C:/Users/yglu1/.vscode/cli/servers/Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da/server/bin/remote-cli/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -886,6 +952,9 @@ events:
       - "C:/Program Files (x86)/IVI Foundation/VISA/WinNT/Bin/"
       - "C:/Program Files/IVI Foundation/VISA/Win64/Bin/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Sunshine/"
+      - "C:/Program Files/Sunshine/tools/"
       - "C:/Users/yglu1/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/yglu1/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -902,9 +971,9 @@ events:
       - "C:/Program Files (x86)/MCWLaser/sbin/"
       - "C:/Program Files (x86)/MCWLaser/"
     searched_directories:
-      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/rc.com"
-      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/rc.exe"
-      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/rc"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/rc.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/rc.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/rc"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/rc.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/rc.exe"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/rc"
@@ -920,22 +989,23 @@ events:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/rc.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/rc.exe"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/rc"
-      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x86/rc.com"
-    found: "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x86/rc.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/rc.com"
+    found: "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/rc.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX86\\x86"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\VCPackages"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\bin\\Roslyn"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Team Tools\\DiagnosticsHub\\Collector"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x86"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x86"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64"
-        - "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\"
+        - "c:\\Users\\yglu1\\.vscode\\cli\\servers\\Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da\\server\\bin\\remote-cli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -945,6 +1015,9 @@ events:
         - "C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin\\"
         - "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
         - "C:\\Users\\yglu1\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\yglu1\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -963,8 +1036,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-v5dxms"
-      binary: "C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-v5dxms"
+      source: "C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-cl9a9j"
+      binary: "C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-cl9a9j"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -973,40 +1046,40 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-v5dxms'
+        Change Dir: 'C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-cl9a9j'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_9768d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a7c8f.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.14+a129329f1 for .NET Framework
-        Build started 8/14/2025 10:09:27 PM.
+        Build started 8/20/2025 7:53:17 PM.
         
-        Project "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v5dxms\\cmTC_9768d.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cl9a9j\\cmTC_a7c8f.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_9768d.dir\\Debug\\".
+          Creating directory "cmTC_a7c8f.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v5dxms\\Debug\\".
-          Creating directory "cmTC_9768d.dir\\Debug\\cmTC_9768d.tlog\\".
+          Creating directory "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cl9a9j\\Debug\\".
+          Creating directory "cmTC_a7c8f.dir\\Debug\\cmTC_a7c8f.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_9768d.dir\\Debug\\cmTC_9768d.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_9768d.dir\\Debug\\cmTC_9768d.tlog\\unsuccessfulbuild".
+          Creating "cmTC_a7c8f.dir\\Debug\\cmTC_a7c8f.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_a7c8f.dir\\Debug\\cmTC_a7c8f.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_9768d.dir\\Debug\\\\" /Fd"cmTC_9768d.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_a7c8f.dir\\Debug\\\\" /Fd"cmTC_a7c8f.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35211 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_9768d.dir\\Debug\\\\" /Fd"cmTC_9768d.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_a7c8f.dir\\Debug\\\\" /Fd"cmTC_a7c8f.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v5dxms\\Debug\\cmTC_9768d.exe" /INCREMENTAL /ILK:"cmTC_9768d.dir\\Debug\\cmTC_9768d.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-v5dxms/Debug/cmTC_9768d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-v5dxms/Debug/cmTC_9768d.lib" /MACHINE:X64  /machine:x64 cmTC_9768d.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_9768d.vcxproj -> C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v5dxms\\Debug\\cmTC_9768d.exe
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cl9a9j\\Debug\\cmTC_a7c8f.exe" /INCREMENTAL /ILK:"cmTC_a7c8f.dir\\Debug\\cmTC_a7c8f.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-cl9a9j/Debug/cmTC_a7c8f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-cl9a9j/Debug/cmTC_a7c8f.lib" /MACHINE:X64  /machine:x64 cmTC_a7c8f.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_a7c8f.vcxproj -> C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cl9a9j\\Debug\\cmTC_a7c8f.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_9768d.dir\\Debug\\cmTC_9768d.tlog\\unsuccessfulbuild".
-          Touching "cmTC_9768d.dir\\Debug\\cmTC_9768d.tlog\\cmTC_9768d.lastbuildstate".
-        Done Building Project "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v5dxms\\cmTC_9768d.vcxproj" (default targets).
+          Deleting file "cmTC_a7c8f.dir\\Debug\\cmTC_a7c8f.tlog\\unsuccessfulbuild".
+          Touching "cmTC_a7c8f.dir\\Debug\\cmTC_a7c8f.tlog\\cmTC_a7c8f.lastbuildstate".
+        Done Building Project "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cl9a9j\\cmTC_a7c8f.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:02.40
+        Time Elapsed 00:00:00.69
         
       exitCode: 0
   -
@@ -1046,8 +1119,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-j0lwfy"
-      binary: "C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-j0lwfy"
+      source: "C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-em22xm"
+      binary: "C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-em22xm"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -1057,40 +1130,40 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-j0lwfy'
+        Change Dir: 'C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-em22xm'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_271b5.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_6e360.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.14+a129329f1 for .NET Framework
-        Build started 8/14/2025 10:09:30 PM.
+        Build started 8/20/2025 7:53:18 PM.
         
-        Project "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j0lwfy\\cmTC_271b5.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-em22xm\\cmTC_6e360.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_271b5.dir\\Debug\\".
+          Creating directory "cmTC_6e360.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j0lwfy\\Debug\\".
-          Creating directory "cmTC_271b5.dir\\Debug\\cmTC_271b5.tlog\\".
+          Creating directory "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-em22xm\\Debug\\".
+          Creating directory "cmTC_6e360.dir\\Debug\\cmTC_6e360.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_271b5.dir\\Debug\\cmTC_271b5.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_271b5.dir\\Debug\\cmTC_271b5.tlog\\unsuccessfulbuild".
+          Creating "cmTC_6e360.dir\\Debug\\cmTC_6e360.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_6e360.dir\\Debug\\cmTC_6e360.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Fo"cmTC_271b5.dir\\Debug\\\\" /Fd"cmTC_271b5.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Fo"cmTC_6e360.dir\\Debug\\\\" /Fd"cmTC_6e360.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35211 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Fo"cmTC_271b5.dir\\Debug\\\\" /Fd"cmTC_271b5.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Fo"cmTC_6e360.dir\\Debug\\\\" /Fd"cmTC_6e360.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j0lwfy\\Debug\\cmTC_271b5.exe" /INCREMENTAL /ILK:"cmTC_271b5.dir\\Debug\\cmTC_271b5.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-j0lwfy/Debug/cmTC_271b5.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-j0lwfy/Debug/cmTC_271b5.lib" /MACHINE:X64  /machine:x64 cmTC_271b5.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_271b5.vcxproj -> C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j0lwfy\\Debug\\cmTC_271b5.exe
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-em22xm\\Debug\\cmTC_6e360.exe" /INCREMENTAL /ILK:"cmTC_6e360.dir\\Debug\\cmTC_6e360.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-em22xm/Debug/cmTC_6e360.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-em22xm/Debug/cmTC_6e360.lib" /MACHINE:X64  /machine:x64 cmTC_6e360.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_6e360.vcxproj -> C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-em22xm\\Debug\\cmTC_6e360.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_271b5.dir\\Debug\\cmTC_271b5.tlog\\unsuccessfulbuild".
-          Touching "cmTC_271b5.dir\\Debug\\cmTC_271b5.tlog\\cmTC_271b5.lastbuildstate".
-        Done Building Project "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j0lwfy\\cmTC_271b5.vcxproj" (default targets).
+          Deleting file "cmTC_6e360.dir\\Debug\\cmTC_6e360.tlog\\unsuccessfulbuild".
+          Touching "cmTC_6e360.dir\\Debug\\cmTC_6e360.tlog\\cmTC_6e360.lastbuildstate".
+        Done Building Project "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-em22xm\\cmTC_6e360.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:02.06
+        Time Elapsed 00:00:00.72
         
       exitCode: 0
   -
@@ -1121,4 +1194,418 @@ events:
       Running the CXX compiler's linker: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe" "-v"
       Microsoft (R) Incremental Linker Version 14.44.35211.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CheckCSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/FindThreads.cmake:97 (check_c_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "libs/glfw/CMakeLists.txt:60 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-8oty3s"
+      binary: "C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-8oty3s"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/libs/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-8oty3s'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_c7750.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.14+a129329f1 for .NET Framework
+        Build started 8/20/2025 7:53:46 PM.
+        
+        Project "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8oty3s\\cmTC_c7750.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_c7750.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8oty3s\\Debug\\".
+          Creating directory "cmTC_c7750.dir\\Debug\\cmTC_c7750.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_c7750.dir\\Debug\\cmTC_c7750.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_c7750.dir\\Debug\\cmTC_c7750.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /std:c11 /Fo"cmTC_c7750.dir\\Debug\\\\" /Fd"cmTC_c7750.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8oty3s\\src.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35211 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /std:c11 /Fo"cmTC_c7750.dir\\Debug\\\\" /Fd"cmTC_c7750.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8oty3s\\src.c"
+          src.c
+        C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8oty3s\\src.c(1,1): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8oty3s\\cmTC_c7750.vcxproj]
+        Done Building Project "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8oty3s\\cmTC_c7750.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8oty3s\\cmTC_c7750.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8oty3s\\src.c(1,1): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8oty3s\\cmTC_c7750.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.52
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CheckLibraryExists.cmake:154 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/FindThreads.cmake:112 (check_library_exists)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "libs/glfw/CMakeLists.txt:60 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-zoyepf"
+      binary: "C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-zoyepf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/libs/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-zoyepf'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_abcce.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.14+a129329f1 for .NET Framework
+        Build started 8/20/2025 7:53:47 PM.
+        
+        Project "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zoyepf\\cmTC_abcce.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_abcce.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zoyepf\\Debug\\".
+          Creating directory "cmTC_abcce.dir\\Debug\\cmTC_abcce.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_abcce.dir\\Debug\\cmTC_abcce.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_abcce.dir\\Debug\\cmTC_abcce.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /std:c11 /Fo"cmTC_abcce.dir\\Debug\\\\" /Fd"cmTC_abcce.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zoyepf\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35211 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /std:c11 /Fo"cmTC_abcce.dir\\Debug\\\\" /Fd"cmTC_abcce.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zoyepf\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zoyepf\\Debug\\cmTC_abcce.exe" /INCREMENTAL /ILK:"cmTC_abcce.dir\\Debug\\cmTC_abcce.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-zoyepf/Debug/cmTC_abcce.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-zoyepf/Debug/cmTC_abcce.lib" /MACHINE:X64  /machine:x64 cmTC_abcce.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zoyepf\\cmTC_abcce.vcxproj]
+        Done Building Project "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zoyepf\\cmTC_abcce.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zoyepf\\cmTC_abcce.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zoyepf\\cmTC_abcce.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.66
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CheckLibraryExists.cmake:154 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/FindThreads.cmake:112 (check_library_exists)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "libs/glfw/CMakeLists.txt:60 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-6i73lb"
+      binary: "C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-6i73lb"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/libs/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-6i73lb'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_0bd4f.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.14+a129329f1 for .NET Framework
+        Build started 8/20/2025 7:53:48 PM.
+        
+        Project "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6i73lb\\cmTC_0bd4f.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_0bd4f.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6i73lb\\Debug\\".
+          Creating directory "cmTC_0bd4f.dir\\Debug\\cmTC_0bd4f.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_0bd4f.dir\\Debug\\cmTC_0bd4f.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_0bd4f.dir\\Debug\\cmTC_0bd4f.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /std:c11 /Fo"cmTC_0bd4f.dir\\Debug\\\\" /Fd"cmTC_0bd4f.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6i73lb\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35211 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /std:c11 /Fo"cmTC_0bd4f.dir\\Debug\\\\" /Fd"cmTC_0bd4f.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6i73lb\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6i73lb\\Debug\\cmTC_0bd4f.exe" /INCREMENTAL /ILK:"cmTC_0bd4f.dir\\Debug\\cmTC_0bd4f.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-6i73lb/Debug/cmTC_0bd4f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/CMakeFiles/CMakeScratch/TryCompile-6i73lb/Debug/cmTC_0bd4f.lib" /MACHINE:X64  /machine:x64 cmTC_0bd4f.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6i73lb\\cmTC_0bd4f.vcxproj]
+        Done Building Project "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6i73lb\\cmTC_0bd4f.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6i73lb\\cmTC_0bd4f.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\yglu1\\OneDrive\\Documents\\Projects\\MCWLaser\\mcwlasercontroller\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6i73lb\\cmTC_0bd4f.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.63
+        
+      exitCode: 1
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/FindDoxygen.cmake:753 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/FindDoxygen.cmake:937 (_Doxygen_find_doxygen)"
+      - "libs/glfw/docs/CMakeLists.txt:35 (find_package)"
+    mode: "program"
+    variable: "DOXYGEN_EXECUTABLE"
+    description: "Doxygen documentation generation tool (https://www.doxygen.nl)"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "doxygen"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/"
+      - "C:/Users/yglu1/.vscode/cli/servers/Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da/server/bin/remote-cli/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/IVI Foundation/VISA/WinNT/Bin/"
+      - "C:/Program Files/IVI Foundation/VISA/Win64/Bin/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Sunshine/"
+      - "C:/Program Files/Sunshine/tools/"
+      - "C:/Users/yglu1/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/yglu1/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/MCWLaser/bin/"
+      - "C:/Program Files (x86)/MCWLaser/sbin/"
+      - "C:/Program Files (x86)/MCWLaser/"
+      - "/REGISTRY-NOTFOUND/bin/"
+      - "/Applications/Doxygen.app/Contents/Resources/"
+      - "/Applications/Doxygen.app/Contents/MacOS/"
+      - "/Applications/Utilities/Doxygen.app/Contents/Resources/"
+      - "/Applications/Utilities/Doxygen.app/Contents/MacOS/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/doxygen.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/doxygen.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/doxygen"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/doxygen.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/doxygen.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/doxygen"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/doxygen.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/doxygen.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/doxygen"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/doxygen.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/doxygen.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/doxygen"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/doxygen.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/doxygen.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/doxygen"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/doxygen.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/doxygen.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/doxygen"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/doxygen.com"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/doxygen.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/doxygen"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/doxygen.com"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/doxygen.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/doxygen"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/doxygen.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/doxygen.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/doxygen"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/doxygen.com"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/doxygen.exe"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/doxygen"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/doxygen.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/doxygen.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/doxygen"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/doxygen.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/doxygen.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/doxygen"
+      - "C:/Users/yglu1/.vscode/cli/servers/Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da/server/bin/remote-cli/doxygen.com"
+      - "C:/Users/yglu1/.vscode/cli/servers/Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da/server/bin/remote-cli/doxygen.exe"
+      - "C:/Users/yglu1/.vscode/cli/servers/Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da/server/bin/remote-cli/doxygen"
+      - "C:/Windows/System32/doxygen.com"
+      - "C:/Windows/System32/doxygen.exe"
+      - "C:/Windows/System32/doxygen"
+      - "C:/Windows/doxygen.com"
+      - "C:/Windows/doxygen.exe"
+      - "C:/Windows/doxygen"
+      - "C:/Windows/System32/wbem/doxygen.com"
+      - "C:/Windows/System32/wbem/doxygen.exe"
+      - "C:/Windows/System32/wbem/doxygen"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/doxygen.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/doxygen.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/doxygen"
+      - "C:/Windows/System32/OpenSSH/doxygen.com"
+      - "C:/Windows/System32/OpenSSH/doxygen.exe"
+      - "C:/Windows/System32/OpenSSH/doxygen"
+      - "C:/Program Files (x86)/IVI Foundation/VISA/WinNT/Bin/doxygen.com"
+      - "C:/Program Files (x86)/IVI Foundation/VISA/WinNT/Bin/doxygen.exe"
+      - "C:/Program Files (x86)/IVI Foundation/VISA/WinNT/Bin/doxygen"
+      - "C:/Program Files/IVI Foundation/VISA/Win64/Bin/doxygen.com"
+      - "C:/Program Files/IVI Foundation/VISA/Win64/Bin/doxygen.exe"
+      - "C:/Program Files/IVI Foundation/VISA/Win64/Bin/doxygen"
+      - "C:/Program Files/Git/cmd/doxygen.com"
+      - "C:/Program Files/Git/cmd/doxygen.exe"
+      - "C:/Program Files/Git/cmd/doxygen"
+      - "C:/Program Files/CMake/bin/doxygen.com"
+      - "C:/Program Files/CMake/bin/doxygen.exe"
+      - "C:/Program Files/CMake/bin/doxygen"
+      - "C:/Program Files/Sunshine/doxygen.com"
+      - "C:/Program Files/Sunshine/doxygen.exe"
+      - "C:/Program Files/Sunshine/doxygen"
+      - "C:/Program Files/Sunshine/tools/doxygen.com"
+      - "C:/Program Files/Sunshine/tools/doxygen.exe"
+      - "C:/Program Files/Sunshine/tools/doxygen"
+      - "C:/Users/yglu1/AppData/Local/Microsoft/WindowsApps/doxygen.com"
+      - "C:/Users/yglu1/AppData/Local/Microsoft/WindowsApps/doxygen.exe"
+      - "C:/Users/yglu1/AppData/Local/Microsoft/WindowsApps/doxygen"
+      - "C:/Users/yglu1/AppData/Local/Programs/Microsoft VS Code/bin/doxygen.com"
+      - "C:/Users/yglu1/AppData/Local/Programs/Microsoft VS Code/bin/doxygen.exe"
+      - "C:/Users/yglu1/AppData/Local/Programs/Microsoft VS Code/bin/doxygen"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/doxygen.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/doxygen.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/doxygen"
+      - "C:/Program Files/bin/doxygen.com"
+      - "C:/Program Files/bin/doxygen.exe"
+      - "C:/Program Files/bin/doxygen"
+      - "C:/Program Files/sbin/doxygen.com"
+      - "C:/Program Files/sbin/doxygen.exe"
+      - "C:/Program Files/sbin/doxygen"
+      - "C:/Program Files/doxygen.com"
+      - "C:/Program Files/doxygen.exe"
+      - "C:/Program Files/doxygen"
+      - "C:/Program Files (x86)/bin/doxygen.com"
+      - "C:/Program Files (x86)/bin/doxygen.exe"
+      - "C:/Program Files (x86)/bin/doxygen"
+      - "C:/Program Files (x86)/sbin/doxygen.com"
+      - "C:/Program Files (x86)/sbin/doxygen.exe"
+      - "C:/Program Files (x86)/sbin/doxygen"
+      - "C:/Program Files (x86)/doxygen.com"
+      - "C:/Program Files (x86)/doxygen.exe"
+      - "C:/Program Files (x86)/doxygen"
+      - "C:/Program Files/CMake/bin/doxygen.com"
+      - "C:/Program Files/CMake/bin/doxygen.exe"
+      - "C:/Program Files/CMake/bin/doxygen"
+      - "C:/Program Files/CMake/sbin/doxygen.com"
+      - "C:/Program Files/CMake/sbin/doxygen.exe"
+      - "C:/Program Files/CMake/sbin/doxygen"
+      - "C:/Program Files/CMake/doxygen.com"
+      - "C:/Program Files/CMake/doxygen.exe"
+      - "C:/Program Files/CMake/doxygen"
+      - "C:/Program Files (x86)/MCWLaser/bin/doxygen.com"
+      - "C:/Program Files (x86)/MCWLaser/bin/doxygen.exe"
+      - "C:/Program Files (x86)/MCWLaser/bin/doxygen"
+      - "C:/Program Files (x86)/MCWLaser/sbin/doxygen.com"
+      - "C:/Program Files (x86)/MCWLaser/sbin/doxygen.exe"
+      - "C:/Program Files (x86)/MCWLaser/sbin/doxygen"
+      - "C:/Program Files (x86)/MCWLaser/doxygen.com"
+      - "C:/Program Files (x86)/MCWLaser/doxygen.exe"
+      - "C:/Program Files (x86)/MCWLaser/doxygen"
+      - "/REGISTRY-NOTFOUND/bin/doxygen.com"
+      - "/REGISTRY-NOTFOUND/bin/doxygen.exe"
+      - "/REGISTRY-NOTFOUND/bin/doxygen"
+      - "/Applications/Doxygen.app/Contents/Resources/doxygen.com"
+      - "/Applications/Doxygen.app/Contents/Resources/doxygen.exe"
+      - "/Applications/Doxygen.app/Contents/Resources/doxygen"
+      - "/Applications/Doxygen.app/Contents/MacOS/doxygen.com"
+      - "/Applications/Doxygen.app/Contents/MacOS/doxygen.exe"
+      - "/Applications/Doxygen.app/Contents/MacOS/doxygen"
+      - "/Applications/Utilities/Doxygen.app/Contents/Resources/doxygen.com"
+      - "/Applications/Utilities/Doxygen.app/Contents/Resources/doxygen.exe"
+      - "/Applications/Utilities/Doxygen.app/Contents/Resources/doxygen"
+      - "/Applications/Utilities/Doxygen.app/Contents/MacOS/doxygen.com"
+      - "/Applications/Utilities/Doxygen.app/Contents/MacOS/doxygen.exe"
+      - "/Applications/Utilities/Doxygen.app/Contents/MacOS/doxygen"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\VCPackages"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\bin\\Roslyn"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Team Tools\\DiagnosticsHub\\Collector"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\"
+        - "c:\\Users\\yglu1\\.vscode\\cli\\servers\\Stable-360a4e4fd251bfce169a4ddf857c7d25d1ad40da\\server\\bin\\remote-cli"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin"
+        - "C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin\\"
+        - "C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
+        - "C:\\Users\\yglu1\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\yglu1\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/MCWLaser"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/MCWLaser"
 ...

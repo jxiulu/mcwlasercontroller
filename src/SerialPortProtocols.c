@@ -40,49 +40,46 @@ static void setDeviceTimeouts(COMMTIMEOUTS* timeOut, SerialPort* selectedPort, D
 	timeOut->WriteTotalTimeoutConstant = selectedPort->writeTimeoutMilliseconds;
 }
 
-bool openSerialPort(SerialPort* selectedPort, const char* portName, DWORD baudRate) {
-	if (!selectedPort)
+bool OpenSerialPort(SerialPort* TargetPort, const char* PortName, DWORD BaudRate) {
+	if (!TargetPort)
 		return false;
-	memset(selectedPort, 0, sizeof(*selectedPort));
-	selectedPort->readTimeoutMilliseconds = 1000;
-	selectedPort->writeTimeoutMilliseconds = 1000;
+	memset(TargetPort, 0, sizeof(*TargetPort));
+	TargetPort->readTimeoutMilliseconds = 1000;
+	TargetPort->writeTimeoutMilliseconds = 1000;
 
 	char fullName[128];
-	snprintf(fullName, sizeof(fullName), "\\\\.\\%s", portName); // Prefix that is needed for COM10 and over on Windwos (allegedly). should be fine for COM1 through COM9
-	strncpy(selectedPort->portName, fullName, sizeof(selectedPort->portName) - 1);
+	snprintf(fullName, sizeof(fullName), "\\\\.\\%s", PortName); // Prefix that is needed for COM10 and over on Windwos (allegedly). should be fine for COM1 through COM9
+	strncpy(TargetPort->portName, fullName, sizeof(TargetPort->portName) - 1);
 
-	selectedPort->serialHandle = CreateFileA(
-		selectedPort->portName, GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, NULL
+	TargetPort->serialHandle = CreateFileA(
+		TargetPort->portName, GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, NULL
 	);
-	if (selectedPort->serialHandle == INVALID_HANDLE_VALUE) {
-		fprintf(stderr, "FAILED TO OPEN %s (ERROR %lu)\n", selectedPort->portName, GetLastError());
+	if (TargetPort->serialHandle == INVALID_HANDLE_VALUE) {
+		fprintf(stderr, "FAILED TO OPEN %s (ERROR %lu)\n", TargetPort->portName, GetLastError());
 		return false;
 	}
 
 	DCB deviceControlBook = { 0 };
-	if (!setDeviceControlBook(&deviceControlBook, selectedPort, baudRate))
+	if (!setDeviceControlBook(&deviceControlBook, TargetPort, BaudRate))
 		return false;
 
 	COMMTIMEOUTS timeOut = { 0 };
-	setDeviceTimeouts(&timeOut, selectedPort, baudRate);
-
-
-	if (!SetCommTimeouts(selectedPort->serialHandle, &timeOut)) {
+	setDeviceTimeouts(&timeOut, TargetPort, BaudRate);
+	if (!SetCommTimeouts(TargetPort->serialHandle, &timeOut)) {
 		fprintf(stderr, "SETCOMMTIMEOUTS FAILED (ERROR %lu)\n", GetLastError());
-		CloseHandle(selectedPort->serialHandle);
+		CloseHandle(TargetPort->serialHandle);
 		return false;
 	}
 
-	PurgeComm(selectedPort->serialHandle, PURGE_RXCLEAR | PURGE_TXCLEAR);
-
-	selectedPort->isOpen = true;
+	PurgeComm(TargetPort->serialHandle, PURGE_RXCLEAR | PURGE_TXCLEAR);
+	TargetPort->isOpen = true;
 	return true;
 }
 
-void closeSerialPort(SerialPort* selectedPort) {
-	if (selectedPort && selectedPort->isOpen) {
-		CloseHandle(selectedPort->serialHandle);
-		selectedPort->isOpen = false;
+void CloseSerialPort(SerialPort* TargetPort) {
+	if (TargetPort && TargetPort->isOpen) {
+		CloseHandle(TargetPort->serialHandle);
+		TargetPort->isOpen = false;
 	}
 }
 

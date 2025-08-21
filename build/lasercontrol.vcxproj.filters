@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\yglu1\OneDrive\Documents\Projects\MCWLaser\mcwlasercontroller\src\OsTechProtocols.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yglu1\OneDrive\Documents\Projects\MCWLaser\mcwlasercontroller\src\SerialPortProtocols.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\yglu1\OneDrive\Documents\Projects\MCWLaser\mcwlasercontroller\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{C744147B-B1F4-3A07-8E34-6E931F98C919}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

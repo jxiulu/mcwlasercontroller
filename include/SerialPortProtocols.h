@@ -11,9 +11,9 @@ typedef struct {
 	DWORD	writeTimeoutMilliseconds;
 } SerialPort;
 
-bool openSerialPort(SerialPort* selectedPort, const char* portName, DWORD baudRate);
+bool OpenSerialPort(SerialPort* selectedPort, const char* portName, DWORD baudRate);
 
-void closeSerialPort(SerialPort* selectedPort);
+void CloseSerialPort(SerialPort* selectedPort);
 
 bool writeBytes(SerialPort* selectedPort, const void* dataToWrite, size_t lengthToWrite);
 

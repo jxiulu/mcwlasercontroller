@@ -94,7 +94,7 @@
       </ExceptionHandling>
       <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
-      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
       <MinimalRebuild></MinimalRebuild>
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
@@ -146,7 +146,7 @@
       </ExceptionHandling>
       <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
       <MinimalRebuild></MinimalRebuild>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
@@ -200,7 +200,7 @@
       </ExceptionHandling>
       <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
       <MinimalRebuild></MinimalRebuild>
       <Optimization>MinSpace</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
@@ -255,7 +255,7 @@
       </ExceptionHandling>
       <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
       <MinimalRebuild></MinimalRebuild>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
@@ -356,10 +356,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\yglu1\OneDrive\Documents\Projects\MCWLaser\mcwlasercontroller\src\main.c" />
+    <ClCompile Include="C:\Users\yglu1\OneDrive\Documents\Projects\MCWLaser\mcwlasercontroller\src\console.c" />
     <ClCompile Include="C:\Users\yglu1\OneDrive\Documents\Projects\MCWLaser\mcwlasercontroller\src\OsTechProtocols.c" />
     <ClCompile Include="C:\Users\yglu1\OneDrive\Documents\Projects\MCWLaser\mcwlasercontroller\src\SerialPortProtocols.c" />
-    <ClCompile Include="C:\Users\yglu1\OneDrive\Documents\Projects\MCWLaser\mcwlasercontroller\src\threadsafety.c" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
