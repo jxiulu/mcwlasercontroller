@@ -11,7 +11,7 @@
 #include <chrono>
 #include <thread>
 
-namespace Laser {
+namespace Lumics {
     extern "C" {
         #include "OsTechProtocols.h"
     }
@@ -23,6 +23,7 @@ namespace Serial {
     }
 }
 
+/*
 namespace Global {
     struct TemperatureSensors_struct {
         std::atomic<float> Sensor1 = 0.0f;
@@ -43,13 +44,31 @@ namespace Global {
     };
     typedef structDeviceState DeviceState;
 }
+*/
+
+class Laser {
+    public:
+    struct Temperature {
+        float Sensor1 = 0.0f;
+        float Sensor2 = 0.0f;
+        // Rest of the sensors read by 1TA, 2TA, etc.
+    };
+    struct PulseSettings {
+        uint16_t    PulseWidth = 1000;
+        uint16_t    PulsePeriod = 1000;
+        uint16_t    PulseNumber = 1000;
+    };
+    struct Control {
+        bool MainLaserOn = false;
+        bool PilotLaserOn = false;
+        bool GatedMode = false;
+    };
+};
 
 // TODO: try to import necessary functions from /src for global polling thread
 
-Global::DeviceState CurrentDevice = {};
-
 int main() {
-    std::cout << "Hello world!" << std::endl;
-    std::cin;
+    std::cout << "test" << std::endl;
+    std::cin.get();
     return 0;
 }

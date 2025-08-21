@@ -303,7 +303,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\yglu1\OneDrive\Documents\Projects\MCWLaser\mcwlasercontroller\build\gui_build\src\glfw.vcxproj">
+    <ProjectReference Include="C:\Users\yglu1\OneDrive\Documents\Projects\MCWLaser\mcwlasercontroller\build\gui\build\src\glfw.vcxproj">
       <Project>{8BB50186-B5FD-397C-B294-5D4A1CDE6D92}</Project>
       <Name>glfw</Name>
     </ProjectReference>

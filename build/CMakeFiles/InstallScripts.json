@@ -3,9 +3,9 @@
 	[
 		"C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/cmake_install.cmake",
 		"C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/gui/cmake_install.cmake",
-		"C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/gui_build/cmake_install.cmake",
-		"C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/gui_build/src/cmake_install.cmake",
-		"C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/gui_build/docs/cmake_install.cmake"
+		"C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/gui/build/cmake_install.cmake",
+		"C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/gui/build/src/cmake_install.cmake",
+		"C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/build/gui/build/docs/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

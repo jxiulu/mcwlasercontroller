@@ -1,7 +1,8 @@
 // framework.h
 // all needed include headers here
 
-#pragma once
+#ifndef FRAMEWORK_H
+#define FRAMEWORK_H
 
 #include <windows.h>
 #include <stdbool.h>
@@ -10,3 +11,5 @@
 #include <ctype.h>
 #include <string.h>
 #include <time.h>
+
+#endif
