@@ -1,26 +1,27 @@
 {
-  "version": 3,
-  "cmakeMinimumRequired": { "major": 3, "minor": 21 },
-  "configurePresets": [
-    {
-      "name": "windows-debug",
-      "generator": "Ninja",
-      "binaryDir": "${sourceDir}/build/debug",
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug"
-      }
-    },
-    {
-      "name": "windows-release",
-      "generator": "Ninja",
-      "binaryDir": "${sourceDir}/build/release",
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Release"
-      }
-    }
-  ],
-  "buildPresets": [
-    { "name": "debug", "configurePreset": "windows-debug" },
-    { "name": "release","configurePreset": "windows-release" }
-  ]
+    "version": 8,
+    "configurePresets": [
+        {
+            "name": "Debug",
+            "displayName": "Visual Studio Build Tools 2022 Release - amd64",
+            "description": "Using compilers for Visual Studio 17 2022 (x64 architecture)",
+            "generator": "Visual Studio 17 2022",
+            "toolset": "host=x64",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "Debug-debug",
+            "displayName": "Visual Studio Build Tools 2022 Release - amd64 - Debug",
+            "configurePreset": "Debug",
+            "configuration": "Debug"
+        }
+    ]
 }

@@ -3,12 +3,24 @@
 #ifndef OSTECH_PROTOCOLS_H
 #define OSTECH_PROTOCOLS_H
 
-#include "SerialPortProtocols.h"
+#include "serial-win.h"
+
+typedef enum {
+	LUMICS_NONE = 0,
+	LUMICS_BOOL,
+	LUMICS_WORD,
+	LUMICS_FLOAT,
+} CommandType;
+
+typedef enum {
+	READ = 0,
+	WRITE,
+} InstructionType;
 
 typedef struct {
-	SerialPort			deviceSerialPort;
+	SerialPort			DeviceSerialPort;
 	bool				deviceIsConnected;
-} Device;
+} Device; // change this
 
 void convertToASCII(char* input);
 
@@ -29,7 +41,7 @@ bool readDeviceFloatReply(Device* device, float* outputReply);
 
 bool setBinaryMode(Device* device, bool binaryModeEnabled);
 
-bool ConnectDevice(Device* device, const char* portName);
+bool ConnectDevice(Device* device, const char* PortName);
 
 bool DisconnectDevice(Device* device);
 

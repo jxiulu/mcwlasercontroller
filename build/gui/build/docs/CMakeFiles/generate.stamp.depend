@@ -1,5 +1,0 @@
-# CMake generation dependency list for this directory.
-C:/Program Files/CMake/share/cmake-4.1/Modules/FindDoxygen.cmake
-C:/Program Files/CMake/share/cmake-4.1/Modules/FindPackageHandleStandardArgs.cmake
-C:/Program Files/CMake/share/cmake-4.1/Modules/FindPackageMessage.cmake
-C:/Users/yglu1/OneDrive/Documents/Projects/MCWLaser/mcwlasercontroller/libs/glfw/docs/CMakeLists.txt

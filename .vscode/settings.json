@@ -59,6 +59,12 @@
         "xmemory": "cpp",
         "xstring": "cpp",
         "xtr1common": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "lumics": "c",
+        "chrono": "c",
+        "sstream": "c",
+        "forward_list": "cpp",
+        "iomanip": "cpp",
+        "optional": "cpp"
     }
 }

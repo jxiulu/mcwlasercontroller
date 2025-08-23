@@ -6,12 +6,40 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_library(
-    lasercontrol
-    src/OsTechProtocols.c
-    src/SerialPortProtocols.c
+include_directories(${CMAKE_SOURCE_DIR}/include)
+set(srcfiles
+    src/comm/OsTechProtocols.c
+    src/comm/serial-win.c
+    src/app/console.c
 )
-target_include_directories(lasercontrol PUBLIC ${CMAKE_SOURCE_DIR}/include)
-target_link_libraries(lasercontrol PUBLIC kernel32)
+add_executable(cli ${srcfiles})
 
-add_subdirectory(gui)
+
+find_package(OpenGL REQUIRED)
+add_subdirectory(lib/glfw)
+
+set(gui_srcfiles
+    src/app/gui.cpp
+    src/comm/lumics.c
+    src/comm/serial-win.c
+)
+list(APPEND gui_srcfiles
+    lib/imgui/imgui.cpp
+    lib/imgui/imgui_draw.cpp
+    lib/imgui/imgui_tables.cpp
+    lib/imgui/imgui_widgets.cpp
+    lib/imgui/backends/imgui_impl_glfw.cpp
+    lib/imgui/backends/imgui_impl_opengl3.cpp
+)
+add_executable(gui ${gui_srcfiles})
+
+target_include_directories(gui PRIVATE
+    ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/lib/glfw/include
+    ${CMAKE_SOURCE_DIR}/lib/imgui
+)
+target_link_libraries(gui OpenGL::GL)
+target_link_libraries(gui
+    glfw
+    ${CMAKE_DL_LIBS}
+)
